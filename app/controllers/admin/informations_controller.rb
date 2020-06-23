@@ -12,7 +12,7 @@ class Admin::InformationsController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
-       redirect_to admin_informations_path
+      redirect_to admin_information_path(@information)
     else
       render 'index'
     end
@@ -25,8 +25,8 @@ class Admin::InformationsController < ApplicationController
   end
 
   def update
-    if @information.update
-      redirect_to admin_informations_path	
+    if @information.update(information_params)
+      redirect_to admin_information_path(@information)
     else
       render 'index'
     end
