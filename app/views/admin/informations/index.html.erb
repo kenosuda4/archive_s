@@ -1,2 +1,28 @@
-<h1>Admin::Informations#index</h1>
-<p>Find me in app/views/admin/informations/index.html.erb</p>
+<div class="row">
+    <div class="col-xs-9">
+        informations
+        
+        <% @informations.each do |information| %>
+            <table class="info-table">
+                <%= link_to information.title, admin_information_path(information) %>
+            </table>
+        <% end %>
+        
+    </div>
+    
+    <div class="col-xs-3">
+    新規投稿
+        <%= form_for @information, url: admin_informations_path, method: :post, class: "form-control" do |f| %>
+            タイトル
+            <%= f.text_field :title, class:"form-control" %>
+            内容
+            <%= f.text_field :info_content, class:"form-control" %>
+            公開ステータス
+            　公開 
+            　<%= f.radio_button :is_valid, true %> 
+            　非公開 
+            　<%= f.radio_button :is_valid, false %> 
+            <%= f.submit "新規登録", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+        <% end %>
+    </div>
+</div>
