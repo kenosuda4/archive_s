@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
+    get 'athletic_events/index'
+    get 'athletic_events/show'
+    get 'athletic_events/edit'
+  end
+  namespace :admin do
     get 'genres/index'
     get 'genres/show'
     get 'genres/edit'
