@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
+    get 'genres/index'
+    get 'genres/show'
+    get 'genres/edit'
+  end
+  namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update]
   end
 
