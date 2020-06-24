@@ -13,16 +13,16 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   } 
-  
-  
-  scope modul: :user do
-    resources :users, only: [:index, :show, :edit, :update]
-  end
-  
-    namespace :admin do
+    
+  namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
+  end
+
+   
+  scope modul: :user do
+    resources :users, only: [:index, :show, :edit, :update]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
