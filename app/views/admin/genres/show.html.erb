@@ -1,2 +1,13 @@
-<h1>Admin::Genres#show</h1>
-<p>Find me in app/views/admin/genres/show.html.erb</p>
+<div class="row">
+    <div class="col-xs-9">
+        
+      <%= @genre.name %>
+
+      <%= link_to "編集", edit_admin_genre_path(@genre) %>
+        
+    </div>
+    
+    <div class="col-xs-3">
+
+    </div>
+</div>

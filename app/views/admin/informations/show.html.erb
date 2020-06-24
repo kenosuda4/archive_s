@@ -1,2 +1,15 @@
-<h1>Admin::Informations#show</h1>
-<p>Find me in app/views/admin/informations/show.html.erb</p>
+<div class="row">
+    <div class="col-xs-9">
+        
+      <%= @information.title %>
+
+      <%= @information.info_content %>
+
+      <%= link_to "編集", edit_admin_information_path(@information) %>
+        
+    </div>
+    
+    <div class="col-xs-3">
+
+    </div>
+</div>

@@ -1,2 +1,14 @@
-<h1>Admin::AthleticEvents#show</h1>
-<p>Find me in app/views/admin/athletic_events/show.html.erb</p>
+<div class="row">
+    <div class="col-xs-9">
+        
+      <%= @athletic_event.name %>
+
+
+      <%= link_to "編集", edit_admin_athletic_event_path(@athletic_event) %>
+        
+    </div>
+    
+    <div class="col-xs-3">
+
+    </div>
+</div>
