@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_142118) do
     t.integer "genre_id"
     t.text "introduction"
     t.string "image"
+    t.string "user_id"
     t.integer "total_distance"
     t.boolean "is_valid"
     t.datetime "created_at", null: false

@@ -22,6 +22,15 @@ class Admin::MenusController < ApplicationController
     end
   end
 
+  def destroy
+    if menu.destroy
+       redirect_to admin_menus_path
+    else
+      render 'show'
+    end
+  end
+
+
   private
   
   def menu_params

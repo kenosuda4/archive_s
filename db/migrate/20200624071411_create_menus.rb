@@ -5,6 +5,7 @@ class CreateMenus < ActiveRecord::Migration[5.2]
       t.integer :genre_id
       t.text :introduction
       t.string :image
+      t.string :user_id
       t.integer :total_distance
       t.boolean :is_valid
 

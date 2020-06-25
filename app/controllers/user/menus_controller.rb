@@ -3,7 +3,7 @@ class User::MenusController < ApplicationController
   before_action :authenticate_user!
   #特定アクションの重複記述まとめる
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  before_action :set_genres, only: [:edit, :update, :new, :index, :create,]
+  before_action :set_genres, only: [:edit, :update, :new, :index, :create, :destry]
 
 
   def index
@@ -17,9 +17,8 @@ class User::MenusController < ApplicationController
 
   def create
     @menu = Menu.new(menu_params)
-    binding.pry
-    @menu.user_id　= current_user.id
-     if @menu.save!
+    @menu.user_id = current_user.id
+     if @menu.save
        redirect_to menu_path(@menu)
     else
       render 'new'
@@ -33,16 +32,19 @@ class User::MenusController < ApplicationController
   end
 
   def update
-    if menu.update
-      redirect_to menu_path(@menu)
+    if @menu.update(menu_params)
+       redirect_to menu_path(@menu)
     else
       render 'edit'
     end
   end
 
   def destroy
-    menu.destroy
-    redirect_to menus_path 
+    if menu.destroy
+       redirect_to user_menus_path
+    else
+      render 'show'
+    end
   end
 
   private
