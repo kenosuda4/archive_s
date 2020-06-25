@@ -6,23 +6,25 @@ Rails.application.routes.draw do
     passwords:     'admins/passwords',
     registrations: 'admins/registrations'
   } 
-  
-    #devise user
+
+  #devise user
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   } 
+
     
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
+    resources :menus, only: [:index, :show, :edit, :update, :destroy]
   end
-
-   
-  scope modul: :user do
+  #: :を忘れてエラー
+  scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
+    resources :menus, only: [:index, :new, :create, :show, :edit, :update]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

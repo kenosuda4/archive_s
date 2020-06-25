@@ -1,0 +1,24 @@
+<div class="row">
+        <div class="col-xs-6">
+            <% if @user.image? %>
+                <%= image_tag @user.image.url %>
+            <% else %>
+                <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+            <% end %>
+        </div>
+
+        <div class="col-xs-6">
+            <%= f.label :メニュー名 %>
+            <%= @menu.name %><br>
+
+            <%= @menu.label :内容 %>
+            <%= @menu.introduction %>
+            
+            <%= @menu.label :合計距離 %>
+            <%= @menu.total_distance %>
+
+
+        </div>
+
+
+</div>
