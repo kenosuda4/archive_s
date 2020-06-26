@@ -4,12 +4,25 @@
             
         </div>
         <div class="col-xs-9">
-                <% @menus.each do |menu| %>
-                        <%= link_to menu_path(menu), class: "btn-link" do %>
-                                <%= menu.name %>
-                        <% end %>
-                        <%= menu.user.name %>
-                <% end %>
+                <table>
+                        <tr>
+                                <th>user-name</th>
+                                <th>menu-name</th>
+                        </tr>
+                        <% @menus.each do |menu| %>
+                        <tr>
+                                <td>
+                                <%= link_to menu_path(menu), class: "btn-link" do %>
+                                        <%= menu.user.name %>
+                                <% end %>
+                                </td>
+                                <td>
+                                 <%= menu.name %>
+                                </td>
+        
+                        </tr>
+                         <% end %>
+                </table>
         </div>
     
 

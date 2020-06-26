@@ -15,7 +15,7 @@ class Admin::MenusController < ApplicationController
   end
 
   def update
-    if menu.update(menu_params)
+    if @menu.update(menu_params)
        redirect_to admin_menu_path(menu)
     else
       render 'edit'
@@ -23,8 +23,8 @@ class Admin::MenusController < ApplicationController
   end
 
   def destroy
-    if menu.destroy
-       redirect_to admin_menus_path
+    if @menu.destroy
+       redirect_to admin_menus_path	
     else
       render 'show'
     end

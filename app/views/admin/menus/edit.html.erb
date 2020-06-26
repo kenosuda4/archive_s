@@ -1,2 +1,28 @@
-<h1>Admin::Menus#edit</h1>
-<p>Find me in app/views/admin/menus/edit.html.erb</p>
+<div class="row">
+    <div class="col-xs-"6">
+        <%= form_for @menu, class: "form-control" do |f| %>
+            <%= f.file_field :image %>
+
+
+
+            <%= f.label :メニュー名 %>
+            <%= f.text_area :name %><br>
+
+            <%= f.label :内容 %>
+            <%= f.text_area :introduction, 'data-provider': :summernote %>
+    
+            <%= f.label :合計距離 %>
+            <%= f.number_field :total_distance %>
+            <%= f.label :ジャンル %>
+            <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+            <%= f.label :公開 %>
+            <%= f.radio_button :is_valid, true %>
+            <%= f.label :非公開　%>
+            <%= f.radio_button :is_valid, true %>
+
+            <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+
+     <% end %>
+    </div>
+</div>
