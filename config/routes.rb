@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'competitions/index'
+    get 'competitions/show'
+    get 'competitions/edit'
+  end
+  namespace :user do
+    get 'competitions/index'
+    get 'competitions/new'
+    get 'competitions/show'
+    get 'competitions/edit'
+  end
   #devise admin
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',

@@ -1,13 +1,12 @@
 class User < ApplicationRecord
   
   has_many :menus, dependent: :destroy
+  has_many :competitions, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  
-  
   with_options presence: true do
     validates :name
     validates :email
