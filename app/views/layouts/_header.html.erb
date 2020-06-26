@@ -1,0 +1,38 @@
+<header class="navbar navbar-fixed-top" style="background-color:#3d2c26;color: #fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <nav class="nav navbar-nav navbar-left">
+          <span class="header-logo">
+
+          </span>
+        </nav>
+      </div>
+      <div class="col-xs-9" style="height:100px;">
+        <nav class="clearfix" style="line-height: 100px;font-size: 15px;">
+          <ul class="nav navbar-nav navbar-right header-navi">
+            <% if admin_signed_in? %>
+
+              <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+            <% elsif user_signed_in? %>
+              <li>ようこそ、<%= current_user.name %>さん！</li>
+
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+
+              <li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+        # <% if admin_signed_in? %>
+        #   <div class="input-group header-search">
+        #     <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+        #     <span class="input-group-btn">
+        #       <%= button_tag "", :name => nil, class: "glyphicon glyphicon-search btn btn-default" %>
+        #     </span>
+          </div>
+        <% else %>
+        <% end %>
+      </div>
+  </div>
+</header>

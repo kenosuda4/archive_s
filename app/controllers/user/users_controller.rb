@@ -2,10 +2,12 @@ class User::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update,]
   
   def index
-    @users = Users.all
+    @users = User.all
+    @menus = @user.menus.all
   end
 
   def show
+    @menus = @user.menus.all
   end
 
   def edit
@@ -16,6 +18,7 @@ class User::UsersController < ApplicationController
        redirect_to user_path(@user)
     else
       render 'edit'
+    end
   end
 
   private

@@ -1,0 +1,26 @@
+<div class="row">
+        <div class="col-xs-"3">
+
+        <%= image_tag @menu.image.thumb.url %>
+        
+        </div>
+        <div class="col-xs-"3">
+
+        </div>
+        <div class="col-xs-"6">
+            メニュー名
+            <%= @menu.name %><br>
+
+            内容
+            <%= @menu.introduction.html_safe %>
+            
+            合計距離
+            <%= @menu.total_distance %>m
+
+            <%= link_to "edit", edit_menu_path(@menu) %>
+            <%= link_to "Destroy", menu_path(@menu.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%>
+
+        </div>
+
+
+</div>

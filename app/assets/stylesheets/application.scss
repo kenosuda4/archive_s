@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+//  bootstrap導入
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+//  summernote導入
+ @import "summernote-bs4";
+//  @import "summernote-custom-theme.min";

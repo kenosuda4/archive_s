@@ -83,11 +83,11 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 #グラフ メンターさんおすすめはchartkick
 gem "chartkick"
 
-#画像どちらかにする,とりあえず現状rifile
-gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
-# gem 'carrierwave'
-# gem 'mini_magick'
+# #画像どちらかにする,とりあえず現状rifile
+# gem "refile", require: "refile/rails", github: 'manfe/refile'
+# gem "refile-mini_magick"
+gem 'carrierwave'
+gem 'mini_magick'
 
 #テキストエディタ
 gem 'bootstrap'
