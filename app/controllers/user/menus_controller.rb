@@ -59,6 +59,6 @@ class User::MenusController < ApplicationController
 
   def set_genres
     @genres = Genre.all
-end
+  end
 
 end

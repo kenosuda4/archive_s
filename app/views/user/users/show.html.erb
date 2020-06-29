@@ -6,6 +6,25 @@
         <%= @user.introduction %>
         <%= link_to "edit", edit_user_path(@user) %>
 
+        <%= link_to '＋', new_competition_path, class: "btn btn-default btn-lg rounded-circle p-0 btn-plus" %>
+        <table class="table table-striped">
+        　<tr>
+           <thead>
+               <th>大会一覧</th>
+           </thead>
+         </tr>
+         <tr>
+         <% @competitions.each do |competition| %>
+  
+            <td>
+               <%= link_to competition.name, competition_path(competition) %>
+            </td>
+    
+         </tr>
+           <% end %>
+        　
+        </table>
+
     </div>
     <div class="col-xs-9">
     <h2>menu</h2>
@@ -14,7 +33,7 @@
     　<tr>
        <thead>
            <th>user-name</th>
-           <th>name</th>
+           <th>n</th>
        </thead>
      </tr>
      <tr>
