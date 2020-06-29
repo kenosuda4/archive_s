@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'homes#top'
   namespace :admin do
     get 'users/index'
     get 'users/show'
