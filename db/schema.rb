@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2020_06_26_083733) do
     t.string "name"
     t.integer "user_id"
     t.integer "genre_id"
-    t.date "day"
     t.text "summary"
     t.boolean "is_valid"
     t.datetime "created_at", null: false

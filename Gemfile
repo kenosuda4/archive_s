@@ -102,3 +102,9 @@ gem 'bcrypt'
 
 #コード確認
 gem 'rubocop-airbnb'
+
+#デプロイ用
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

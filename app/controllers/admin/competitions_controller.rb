@@ -1,8 +1,10 @@
 class Admin::CompetitionsController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_competition, only: [:show, :edit, :update, :destroy]
 
   def index
-    @competitons = Competitions.all 
+    @competitions = Competition.all 
+    @users = User.all
   end
 
   def show
@@ -12,7 +14,7 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def update
-    if @competiton = Competition.update(competiton_params)
+    if @competition = Competition.update(competition_params)
        redirect_to admin_competitions_path
     else
       render 'show'
@@ -20,20 +22,21 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def destroy
-    if @competiton.destroy
+    if @competition.destroy
        redirect_to admin_competitions_path
     else
       render 'index'
+    end
   end
 
   private
 
-  def competiton_params
-    params.require(:competiton).permit(:name, :genre_id, :day, :summary, :is_valid)
+  def competition_params
+    params.require(:competiton).permit(:name, :genre_id, :summary, :is_valid)
   end
   
   def set_competition
-    @competiton = Competition.find(params[:id])
+    @competition = Competition.find(params[:id])
   end
 
 

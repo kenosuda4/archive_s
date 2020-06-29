@@ -1,2 +1,30 @@
-<h1>User::Competitions#show</h1>
-<p>Find me in app/views/user/competitions/show.html.erb</p>
+<div class="row">
+        <div class="col-xs-3">
+
+        
+        </div>
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-6">
+            大会名名
+            <%= @competition.name %><br>
+
+            内容
+            <%= @competition.summary.html_safe %>
+
+            <%if @competition.is_valid == true %>
+            <td> 公開 </td>
+            <% else %>
+            <td> 非公開 </td>
+            <% end %>
+            
+    
+
+            <%= link_to "edit", edit_competition_path(@competition) %>
+            <%= link_to "Destroy", competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%>
+
+        </div>
+
+
+</div>

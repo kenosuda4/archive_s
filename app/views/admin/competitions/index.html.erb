@@ -1,2 +1,28 @@
-<h1>Admin::Competitions#index</h1>
-<p>Find me in app/views/admin/competitions/index.html.erb</p>
+<div class="row">
+    <div class="col-xs-3">
+        
+    </div>
+    <div class="col-xs-9">
+    <h2>大会一覧</h2>
+    <table class="table table-striped">
+    　<tr>
+       <thead>
+           <th>user-name</th>
+           <th>name</th>
+       </thead>
+     </tr>
+     <tr>
+       <% @competitions.each do |competition| %>
+        <td>
+          <%= competition.user.name %>
+        </td>
+        <td>
+           <%= link_to competition.name, admin_competition_path(competition) %>
+        </td>
+     </tr>
+       <% end %>
+    　
+    </table>
+    
+    </div>
+</div>

@@ -1,2 +1,24 @@
-<h1>User::Competitions#edit</h1>
-<p>Find me in app/views/user/competitions/edit.html.erb</p>
+
+<div class="row">
+<div class="col-xs-6">
+<%= form_for @competition, class: "form-control" do |f| %>
+
+    <%= f.label :大会名 %>
+    <%= f.text_area :name %><br>
+
+    <%= f.label :概要 %>
+    <%= f.text_area :summary, 'data-provider': :summernote %>
+
+    <%= f.label :ジャンル %>
+    <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+
+    <%= f.label :公開 %>
+    <%= f.radio_button :is_valid, true %>
+    <%= f.label :非公開　%>
+    <%= f.radio_button :is_valid, false %>
+
+    <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+
+    <% end %>
+</div>
+</div>

@@ -1,2 +1,31 @@
-<h1>User::Competitions#index</h1>
-<p>Find me in app/views/user/competitions/index.html.erb</p>
+<div class="row">
+    <div class="col-xs-3">
+        
+    </div>
+    <div class="col-xs-9">
+    <h2>大会一覧</h2>
+    <%= link_to '＋', new_competition_path, class: "btn btn-default btn-lg rounded-circle p-0 btn-plus" %>
+    <table class="table table-striped">
+    　<tr>
+       <thead>
+           <th>user-name</th>
+           <th>name</th>
+       </thead>
+     </tr>
+     <tr>
+       <% @competitions.each do |competition| %>
+        <td>
+            <%= link_to competition.user.name, user_path(competition.user) %>
+        </td>
+        <td>
+        <%= link_to competition_path(competition), class: "btn-link" do %>
+           <%= competition.name %>
+        <% end %>
+        </td>
+     </tr>
+       <% end %>
+    　
+    </table>
+    
+    </div>
+</div>

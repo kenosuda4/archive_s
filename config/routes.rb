@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'competitions/index'
-    get 'competitions/show'
-    get 'competitions/edit'
-  end
-  namespace :user do
-    get 'competitions/index'
-    get 'competitions/new'
-    get 'competitions/show'
-    get 'competitions/edit'
+    get 'users/index'
+    get 'users/show'
+    get 'users/edit'
   end
   #devise admin
   devise_for :admins, controllers: {
@@ -25,17 +19,18 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   } 
 
-    
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :menus, only: [:index, :show, :edit, :update, :destroy]
+    resources :competitions, only: [:index, :show, :edit, :update]
   end
   #: :を忘れてエラー
   scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
     resources :menus, only: [:index, :new, :create, :show, :edit, :update]
+    resources :competitions, only: [:index, :new, :create, :show, :edit, :update]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
