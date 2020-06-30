@@ -25,13 +25,13 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :menus, only: [:index, :show, :edit, :update, :destroy]
-    resources :competitions, only: [:index, :show, :edit, :update]
+    resources :competitions, only: [:index, :show, :edit, :update, :destroy]
   end
   #: :を忘れてエラー
   scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
     resources :menus, only: [:index, :new, :create, :show, :edit, :update]
-    resources :competitions, only: [:index, :new, :create, :show, :edit, :update]
+    resources :competitions
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
