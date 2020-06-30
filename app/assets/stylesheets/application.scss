@@ -20,3 +20,32 @@
 //  summernote導入
  @import "summernote-bs4";
 //  @import "summernote-custom-theme.min";
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+
+
+.top-main {
+    height: 800px;
+    width: max;
+    background-image: image-url("top-background.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+}
+.top-run {
+    padding: 20px 15px;
+}
+.top-h1, .top-h2 {
+    color: #fff;
+}
+
+// .top-content {
+//     background: linear-gradient( #1F1C2C,#fff,#928dab, #1F1C2C);
+// }
