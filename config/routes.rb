@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
   root 'homes#top'
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
+
   #devise admin
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -25,13 +21,19 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :menus, only: [:index, :show, :edit, :update, :destroy]
-    resources :competitions, only: [:index, :show, :edit, :update]
+    resources :competitions, only: [:index, :show, :edit, :update, :destroy]
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
   #: :を忘れてエラー
   scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
-    resources :menus, only: [:index, :new, :create, :show, :edit, :update]
-    resources :competitions, only: [:index, :new, :create, :show, :edit, :update]
+    # menu+bookmark
+    resources :menus do
+      post 'add' => 'bookmarks#create'
+      delete '/add' => 'bookmarks#destroy'
+    end
+    resources :bookmarks, only: [:index]
+    resources :competitions
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

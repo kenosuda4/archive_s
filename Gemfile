@@ -108,3 +108,5 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+# いいねボタン
+gem 'font-awesome-rails'

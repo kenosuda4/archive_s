@@ -1,9 +1,9 @@
 class User::MenusController < ApplicationController
   #ログインしなければ使えない
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   #特定アクションの重複記述まとめる
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  before_action :set_genres, only: [:edit, :update, :new, :index, :create, :destry]
+  before_action :set_genres, only: [:edit, :update, :new, :create, :destry]
 
 
   def index
@@ -26,6 +26,7 @@ class User::MenusController < ApplicationController
   end
 
   def show
+    @user = @menu.user
   end
 
   def edit
@@ -40,8 +41,8 @@ class User::MenusController < ApplicationController
   end
 
   def destroy
-    if menu.destroy
-       redirect_to user_menus_path
+    if @menu.destroy
+       redirect_to user_path(current_user)
     else
       render 'show'
     end

@@ -1,31 +1,38 @@
-<div class="row">
+<div class="container">
+    <div class="row no1">
+        <div class="col-xs-6">
+            <table>
+                <tr>
+                    <th>大会名名</th>
+                    <td><%= @competition.name %></td>
+                </tr>
+                <tr>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <td><%= @competition.summary.html_safe %></td>
+                <tr>
+                <tr>
+                    <th>ステータス</th>
+                    <%if @competition.is_valid == true %>
+                    <td> 公開 </td>
+                    <% else %>
+                    <td> 非公開 </td>
+                    <% end %>
+                </tr>
+                        <tr>
+                        <td><%= link_to "edit", edit_admin_competition_path(@competition) %></td>
+                        </tr>
+                        <tr>
+                            <td> <%= link_to "Destroy", admin_competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
+                        </tr>
+            </table>
+        </div>
         <div class="col-xs-3">
-
+        記録一覧
 
         
         </div>
-        <div class="col-xs-3">
 
-        </div>
-        <div class="col-xs-6">
-            大会名
-            <%= @competition.name %><br>
-
-            内容
-            <%= @competition.summary.html_safe %>
-
-            <%if @competition.is_valid == true %>
-            <td> 公開 </td>
-            <% else %>
-            <td> 非公開 </td>
-            <% end %>
-            
-    
-
-            <%= link_to "edit", edit_admin_competition_path(@competition) %>
-            <%= link_to "Destroy", admin_competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%>
-
-        </div>
-
-
-</div>
+    </div>
+<div>

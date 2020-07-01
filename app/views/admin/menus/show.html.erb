@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container">
+<div class="row no1">
         <div class="col-xs-3">
 
         <%= image_tag @menu.image.thumb.url %>
@@ -17,17 +18,10 @@
             合計距離
             <%= @menu.total_distance %>m
 
-            <%if menu.is_valid == true %>
-            <td> 公開 </td>
-            <% else %>
-            <td> 非公開 </td>
-            <% end %>
-
+        
             <%= link_to "edit", edit_admin_menu_path(@menu) %>
             <%= link_to "Destroy", admin_menu_path(@menu.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%>
 
         </div>
-
-
 </div>
-
+</div>

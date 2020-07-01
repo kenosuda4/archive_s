@@ -21,6 +21,7 @@ class User::CompetitionsController < ApplicationController
   end
 
   def show
+    @user = @competition.user
   end
 
   def edit
@@ -28,7 +29,7 @@ class User::CompetitionsController < ApplicationController
 
   def update
     if @competition = Competition.update(competition_params)
-       redirect_to competitions_path
+       redirect_to admin_ompetitions_path
     else
       render 'show'
     end
