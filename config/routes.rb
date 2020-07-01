@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
   root 'homes#top'
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
+
   #devise admin
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
@@ -25,7 +21,8 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :athletic_events, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :menus, only: [:index, :show, :edit, :update, :destroy]
-    resources :competitions, only: [:index, :show, :edit, :update]
+    resources :competitions, only: [:index, :show, :edit, :update, :destroy]
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
   end
   #: :を忘れてエラー
   scope module: :user do

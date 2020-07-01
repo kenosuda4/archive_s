@@ -39,8 +39,15 @@
     position: relative;
 
 }
+
+.table-noborder {
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+}
+  
+
 .no1 {
-    padding-top: 80px;
+    padding: 80px 0;
 }
 .top-h1, .top-h2 {
     color: #fff;
