@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+//  いいねボタン用
+ @import "font-awesome";
 
 //  bootstrap導入
  @import "bootstrap-sprockets";
@@ -20,6 +22,7 @@
 //  summernote導入
  @import "summernote-bs4";
 //  @import "summernote-custom-theme.min";
+
 
 
 .clearfix::after {

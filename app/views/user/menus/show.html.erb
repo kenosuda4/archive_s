@@ -6,7 +6,15 @@
         
         </div>
         <div class="col-xs-3">
-
+        <% if user_signed_in? %>
+                <% if current_user.id == @user.id %>
+                <% else %>
+                    <div id="bookmark-btn-<%= @menu.id %>">
+                        <%= render 'user/bookmarks/bookmark', menu: @menu %>
+                    </div>
+                <% end %>
+        <% else %>
+        <% end %>
         </div>
         <div class="col-xs-4">
             <div class="menu-content">

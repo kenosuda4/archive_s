@@ -27,7 +27,12 @@ Rails.application.routes.draw do
   #: :を忘れてエラー
   scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
-    resources :menus
+    # menu+bookmark
+    resources :menus do
+      post 'add' => 'bookmarks#create'
+      delete '/add' => 'bookmarks#destroy'
+    end
+      
     resources :competitions
   end
 
