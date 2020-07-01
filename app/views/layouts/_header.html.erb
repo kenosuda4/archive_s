@@ -8,16 +8,21 @@
           </span>
         </nav>
       </div>
-      <div class="col-xs-9" style="height:100px;">
-        <nav class="clearfix" style="line-height: 100px;font-size: 15px;">
+      <div class="col-xs-9" style="height:10px;">
+        <nav class="clearfix" style="line-height: 10px;font-size: 10px;">
           <ul class="nav navbar-nav navbar-right header-navi">
             <% if admin_signed_in? %>
 
               <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
             <% elsif user_signed_in? %>
-
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li>ようこそ、<%= current_user.name %>さん！</li>
+            <li><%= link_to "メニュー 一覧", menus_path %></li>
+            <li><%= link_to "ユーザー 一覧", users_path %></li>
+            <li><%= link_to "マイページ", user_path(current_user) %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
+            <li><%= link_to "メニュー 一覧", menus_path %></li>
+            <li><%= link_to "ユーザー 一覧", users_path %></li>
             <li><%= link_to 'ログイン', new_user_session_path %></li>
             <li><%= link_to '新規登録', new_user_registration_path %></li>
             <li><%= link_to 'ログイン 管理者', new_admin_session_path %></li>

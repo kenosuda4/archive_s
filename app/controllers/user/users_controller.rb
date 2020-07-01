@@ -3,8 +3,6 @@ class User::UsersController < ApplicationController
   
   def index
     @users = User.all
-    @menus = @user.menus.all
-    @competitions = @user.competitions.all
   end
 
   def show

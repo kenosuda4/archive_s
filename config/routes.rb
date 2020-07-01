@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   #: :を忘れてエラー
   scope module: :user do
     resources :users, only: [:index, :show, :edit, :update]
-    resources :menus, only: [:index, :new, :create, :show, :edit, :update]
-    resources :competitions, only: [:index, :new, :create, :show, :edit, :update]
+    resources :menus
+    resources :competitions
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

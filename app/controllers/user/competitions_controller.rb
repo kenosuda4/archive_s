@@ -36,7 +36,7 @@ class User::CompetitionsController < ApplicationController
 
   def destroy
     if @competition.destroy
-       redirect_to admin_competitions_path
+       redirect_to competitions_path
     else
       render 'index'
     end
