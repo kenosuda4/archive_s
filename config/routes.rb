@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       post 'add' => 'bookmarks#create'
       delete '/add' => 'bookmarks#destroy'
     end
-      
+    resources :bookmarks, only: [:index]
     resources :competitions
   end
 

@@ -1,6 +1,11 @@
 class User::BookmarksController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_bookmark
+    before_action :set_bookmark, only: [:create, :destroy]
+    
+    def index
+        @menus = Menu.all
+        @bookmarks = current_user.bookmarks_menus.includes(:user)
+    end
 
     def create
         user = current_user
