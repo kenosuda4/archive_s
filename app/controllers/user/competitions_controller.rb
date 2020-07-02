@@ -22,6 +22,9 @@ class User::CompetitionsController < ApplicationController
 
   def show
     @user = @competition.user
+    @records = @competition.records.all
+    @athletic_events = AthleticEvent.all
+    @record = Record.new
   end
 
   def edit

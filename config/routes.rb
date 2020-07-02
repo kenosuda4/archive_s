@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'records/show'
+    get 'records/edit'
+  end
+  namespace :user do
+    get 'records/show'
+    get 'records/edit'
+  end
   root 'homes#top'
 
   #devise admin
@@ -34,6 +42,7 @@ Rails.application.routes.draw do
     end
     resources :bookmarks, only: [:index]
     resources :competitions
+    resources :records, only: [:create, :show, :edit, :update, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
