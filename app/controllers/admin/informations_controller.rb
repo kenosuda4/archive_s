@@ -1,6 +1,6 @@
 class Admin::InformationsController < ApplicationController
   #管理者ログインしなければ使えない
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:create, :edit, :update, :destroy]
   #特定アクションの重複記述まとめる
   before_action :set_information, only: [:show, :edit, :update, :destroy]
   

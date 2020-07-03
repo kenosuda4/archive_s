@@ -8,6 +8,9 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def show
+    @user = @competition.user
+    @records = @competition.records.all
+    @athletic_events = AthleticEvent.all
   end
 
   def edit

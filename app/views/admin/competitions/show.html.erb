@@ -20,18 +20,69 @@
                     <td> 非公開 </td>
                     <% end %>
                 </tr>
+                <% if user_signed_in? %>
+                    <% if current_user.id == @user.id %>
                         <tr>
-                        <td><%= link_to "edit", edit_admin_competition_path(@competition) %></td>
+                            <td><%= link_to "edit", admin_edit_competition_path(@competition) %></td>
                         </tr>
                         <tr>
                             <td> <%= link_to "Destroy", admin_competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
                         </tr>
+                    <% end %>
+                <% else %>
+                <% end %>  
             </table>
+
+            <% if user_signed_in? %>
+                <% if current_user.id == @user.id %>
+                <h3>新規投稿</h3>
+                <%= form_for @record, url: records_path, method: :post, class: "form-control" do |f| %>
+                    
+                    <%= f.label :大会名 %>
+                        <%= f.collection_select :competition_id, @user.competitions.all, :id, :name %><br>
+                
+                        <%= f.label :種目 %>
+                        <%= f.collection_select :athletic_event_id, AthleticEvent.all, :id, :name %><br>
+    
+                        <%= f.label :選手名 %>
+                        <%= f.text_area :name %><br>
+        
+                        <%= f.label :記録 %>
+                        <%= f.text_area :time %>
+       
+                        <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+                    <% end %>
+                <% end %>
+                <% else %>
+            <% end %> 
+
+
         </div>
         <div class="col-xs-3">
-        記録一覧
 
-        
+        <h2>記録一覧</h2>
+        <div class="record-main">
+            <table class="table table-striped">
+                <tr>
+                    <thead>
+                    <th>大会一覧</th>
+                    <th></th><th></th>
+                    </thead>
+                </tr>
+                <tr>
+                    <% @records.each do |record| %>
+                    <td>
+                        <%= record.athletic_event.name %>
+                    </td>
+                    <td>
+                        <%= link_to record.name, admin_record_path(record) %>
+                    </td>
+                    <td>
+                        <%= record.time %>
+                    </td>
+                    <% end %>
+                </tr>
+            </table>
         </div>
 
     </div>

@@ -22,14 +22,17 @@ class User::CompetitionsController < ApplicationController
 
   def show
     @user = @competition.user
+    @records = @competition.records.all
+    @athletic_events = AthleticEvent.all
+    @record = Record.new
   end
 
   def edit
   end
 
   def update
-    if @competition = Competition.update(competition_params)
-       redirect_to admin_ompetitions_path
+    if @competition.update(competition_params)
+       redirect_to competition_path(@competition)
     else
       render 'show'
     end
@@ -37,7 +40,7 @@ class User::CompetitionsController < ApplicationController
 
   def destroy
     if @competition.destroy
-       redirect_to admin_competitions_path
+       redirect_to competitions_path
     else
       render 'index'
     end

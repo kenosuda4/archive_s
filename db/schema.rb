@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_01_102149) do
+ActiveRecord::Schema.define(version: 2020_07_02_023211) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 2020_07_01_102149) do
     t.string "user_id"
     t.integer "total_distance"
     t.boolean "is_valid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "records", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "competition_id"
+    t.integer "athletic_event_id"
+    t.string "name"
+    t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
