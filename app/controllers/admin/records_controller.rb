@@ -8,11 +8,13 @@ class Admin::RecordsController < ApplicationController
   end
 
   def edit
+    @user = @record.user
+    @competitons = @user.competitions.all
   end
 
   def update
     if @record.update(record_params)
-      redirect_to admin_competiton_path(@competiton)
+      redirect_to admin_competition_path(@competition)
     else
       render 'edit'
     end
@@ -20,9 +22,9 @@ class Admin::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to admin_competiton_path(@competiton)
+      redirect_to admin_competition_path(@competition)
     else
-      redirect_to admin_competitons_path
+      redirect_to admin_competitions_path
     end
   end
 

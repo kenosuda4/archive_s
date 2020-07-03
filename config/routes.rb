@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'records/show'
-    get 'records/edit'
-  end
-  namespace :user do
-    get 'records/show'
-    get 'records/edit'
-  end
   root 'homes#top'
 
   #devise admin
@@ -31,6 +23,7 @@ Rails.application.routes.draw do
     resources :menus, only: [:index, :show, :edit, :update, :destroy]
     resources :competitions, only: [:index, :show, :edit, :update, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :records, only: [:show, :edit, :update, :destroy]
   end
   #: :を忘れてエラー
   scope module: :user do

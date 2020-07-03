@@ -9,13 +9,14 @@
              　<tr>
                 <thead>
                     <th><%= @record.name %></th>
+                    <th></th>
                 </thead>
                 </tr>
                 <tr>
                     <td><%= @record.time %></td>
+                    <td><%= link_to '編集', edit_admin_record_path(@record) %></td>
                 </tr>
         </table>
-        
 
     </div>
     </div>

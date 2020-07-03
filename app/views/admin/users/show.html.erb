@@ -29,7 +29,7 @@
          <% @competitions.each do |competition| %>
   
             <td>
-               <%= link_to competition.name, competition_path(competition) %>
+               <%= link_to competition.name, admin_competition_path(competition) %>
             </td>
     
          </tr>
@@ -52,10 +52,10 @@
      <tr>
        <% @menus.each do |menu| %>
         <td>
-            <%= link_to @user.name, user_path(@user.id) %>
+            <%= link_to @user.name, admin_user_path(@user.id) %>
         </td>
         <td>
-           <%= link_to menu.name, menu_path(menu) %>
+           <%= link_to menu.name, admin_menu_path(menu) %>
         </td>
         <td>
            <%= menu.total_distance %>m
@@ -71,3 +71,4 @@
     </div>
 </div>
 </div>
+

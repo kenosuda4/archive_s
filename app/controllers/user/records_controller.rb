@@ -18,11 +18,13 @@ class User::RecordsController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @competitons = @user.competitions.all
   end
 
   def update
     if @record.update(record_params)
-      redirect_to competiton_path(@competiton)
+      redirect_to record_path(@record)
     else
       render 'edit'
     end
@@ -30,9 +32,9 @@ class User::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to competiton_path(@competiton)
+      redirect_to competition_path(@competition)
     else
-      redirect_to competitons_path
+      redirect_to competitions_path
     end
   end
 
