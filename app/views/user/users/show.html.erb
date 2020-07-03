@@ -12,7 +12,14 @@
             <th></th>
          </tr>
          <tr>
-            <%= @user.introduction %>
+         <% if @user.introduction.present? %>
+            <td>
+            <%= @user.introduction.html_safe %>
+            </td>
+         <% else %>
+            <td>
+            </td>
+         <% end %>
          </tr>
          </table>
          <!-- ログインユーザーとユーザーid一致で表示 -->

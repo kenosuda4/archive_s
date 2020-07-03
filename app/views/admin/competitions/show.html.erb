@@ -69,8 +69,8 @@
                     <th></th><th></th>
                     </thead>
                 </tr>
+                <% @records.each do |record| %>
                 <tr>
-                    <% @records.each do |record| %>
                     <td>
                         <%= record.athletic_event.name %>
                     </td>
@@ -80,8 +80,8 @@
                     <td>
                         <%= record.time %>
                     </td>
-                    <% end %>
                 </tr>
+                <% end %>
             </table>
         </div>
 

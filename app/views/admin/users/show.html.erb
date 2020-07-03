@@ -12,13 +12,12 @@
             <th></th>
          </tr>
          <tr>
-            <%= @user.introduction %>
+            <td><%= @user.introduction.html_safe %></td>
          </tr>
          </table>
-         <li><%= link_to "ユーザー編集", edit_admin_user_path(@user) %></li>
-         <!-- <li><%= link_to 'ブックマーク一覧', bookmarks_path %></li> -->
-         <!--　admin側からブックマークへのリンクをどうする？ -->
-
+               <div class="user-menu">
+                  <li><%= link_to "ユーザー編集", edit_admin_user_path(@user) %></li>
+               </div>
         <table class="table table-striped">
         　<tr>
            <thead>
@@ -71,4 +70,3 @@
     </div>
 </div>
 </div>
-

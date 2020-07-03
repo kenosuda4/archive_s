@@ -12,7 +12,7 @@ class Admin::AthleticEventsController < ApplicationController
   def create
     @athletic_event = AthleticEvent.new(athletic_event_params)
     if @athletic_event.save
-       redirect_to admin_athletic_event_path(@athletic_event)
+       redirect_to admin_athletic_events_path
     else
        render 'index'
     end
@@ -26,7 +26,7 @@ class Admin::AthleticEventsController < ApplicationController
 
   def update
     if @athletic_event.update(athletic_event_params)
-       redirect_to admin_athletic_event_path(@athletic_event)
+       redirect_to admin_athletic_events_path
     else
        render 'index'
     end

@@ -28,7 +28,10 @@
                 <%= @menu.total_distance %>m<br>
             </div>
             
-            <%= link_to '戻る', :back%>
+            <%= link_to user_path(@user), class: "btn-link" do %>
+                <%= @menu.user.name %>
+            <% end %>
+
             <% if user_signed_in? %>
                 <% if current_user.id == @user.id %>
                     <%= link_to "メニュー編集", edit_menu_path(@menu) %>

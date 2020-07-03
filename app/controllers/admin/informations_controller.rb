@@ -25,7 +25,7 @@ class Admin::InformationsController < ApplicationController
   end
 
   def update
-    if information.update(information_params)
+    if @information.update(information_params)
       redirect_to admin_information_path(@information)
     else
       render 'index'

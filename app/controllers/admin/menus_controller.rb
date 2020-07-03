@@ -16,7 +16,7 @@ class Admin::MenusController < ApplicationController
 
   def update
     if @menu.update(menu_params)
-       redirect_to admin_menu_path(menu)
+       redirect_to admin_menu_path(@menu)
     else
       render 'edit'
     end
