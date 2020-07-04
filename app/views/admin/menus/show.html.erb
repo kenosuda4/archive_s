@@ -1,8 +1,15 @@
 <div class="container">
 <div class="row no1">
         <div class="col-xs-3">
+        <% if @menu.image? %>
 
-        <%= image_tag @menu.image.thumb.url %>
+        <%=  link_to @menu.image.url, 'data-lightbox': @menu.image do %>
+            <%= image_tag @menu.image.thumb.url %>
+        <% end %>
+
+        <% else %>
+            <%= image_tag @menu.image.thumb.url %>
+        <% end %>
         
         </div>
         <div class="col-xs-3">
@@ -16,7 +23,11 @@
             <%= @menu.introduction.html_safe %>
             
             合計距離
-            <%= @menu.total_distance %>m
+            <%= @menu.total_distance %>m<br>
+
+            <%= link_to user_path(@user), class: "btn-link" do %>
+                <%= @menu.user.name %>
+            <% end %>
 
         
             <%= link_to "edit", edit_admin_menu_path(@menu) %>
