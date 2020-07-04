@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   } 
 
+  get '/search' => 'searchs#search', as: 'search' 
+
+
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :genres, only: [:index, :create, :show, :edit, :update, :destroy]

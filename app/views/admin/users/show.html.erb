@@ -12,7 +12,14 @@
             <th></th>
          </tr>
          <tr>
-            <td><%= @user.introduction.html_safe %></td>
+            <% if @user.introduction.present? %>
+               <td>
+                  <%= @user.introduction.html_safe %>
+               </td>
+            <% else %>
+               <td>
+               </td>
+            <% end %>
          </tr>
          </table>
                <div class="user-menu">
