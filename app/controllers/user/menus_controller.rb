@@ -1,6 +1,7 @@
 class User::MenusController < ApplicationController
   #ログインしなければ使えない
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
   #特定アクションの重複記述まとめる
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :set_genres, only: [:edit, :update, :new, :create, :destry]
@@ -60,6 +61,14 @@ class User::MenusController < ApplicationController
 
   def set_genres
     @genres = Genre.all
+  end
+
+  def correct_user
+    menu = Menu.find(params[:id])
+    user = menu.user
+    if current_user != user
+      redirect_to menus_path
+    end
   end
 
 end

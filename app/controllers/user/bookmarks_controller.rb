@@ -23,4 +23,6 @@ class User::BookmarksController < ApplicationController
     def set_bookmark
         @menu = Menu.find(params[:menu_id])
     end
+
+
 end
