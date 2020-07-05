@@ -108,5 +108,8 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+#デプロイ後 s3画像投稿用
+gem 'fog-aws'
+
 # いいねボタン
 gem 'font-awesome-rails'
