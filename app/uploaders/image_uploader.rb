@@ -17,8 +17,18 @@ class ImageUploader < CarrierWave::Uploader::Base
   end 
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  #storage :file
   # storage :fog
+
+  # if~開発環境の場合 elsie~テスト環境の場合 else~本番環境の場合
+  if Rails.env.development? 
+    storage :file
+  elsif Rails.env.test? 
+    storage :file
+  else
+    storage :fog
+  end
+  
 
   # 画像の上限を700pxにする
   # process :resize_to_limit => [700, 700]
