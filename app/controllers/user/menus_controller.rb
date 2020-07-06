@@ -8,7 +8,7 @@ class User::MenusController < ApplicationController
 
 
   def index
-    @menus = Menu.all
+    @menus = Menu.where(is_valid: true)
   end
 
   def new

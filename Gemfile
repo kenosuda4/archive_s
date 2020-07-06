@@ -73,7 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #ログイン
 gem 'devise'
 #デザイン面その他
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 #ページネイション

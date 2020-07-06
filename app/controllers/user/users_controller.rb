@@ -9,8 +9,10 @@ class User::UsersController < ApplicationController
   end
 
   def show
+    @h_menus = @user.menus.where(is_valid: true)
     @menus = @user.menus.all
     @competitions = @user.competitions.all
+    @h_competitions = @user.competitions.where(is_valid: true)
   end
 
   def edit
