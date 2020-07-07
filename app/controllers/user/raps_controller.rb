@@ -4,13 +4,15 @@ class User::RapsController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def create
+    @record = Record.find_by_id(params[:id])
     @rap = Rap.new(rap_params)
     @rap.user_id = current_user.id
     if @rap.save!
        redirect_to rap_path(@rap)
     else
-      @competitons = Competition.all
-      redirect_to competitons_path
+      @user = current_user
+      @user.id = current_user.id
+      redirect_to user_path(@user)
     end
   end
 
@@ -20,8 +22,8 @@ class User::RapsController < ApplicationController
   end
 
   def edit
+    @record = @rap.record
     @user = @rap.user
-    @records = @user.records.all
   end
 
   def update

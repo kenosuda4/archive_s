@@ -4,11 +4,9 @@
         <% if user_signed_in? %>
             <% if current_user.id == @user.id %>
             <h3>ラップタイム追加</h3>
-            <%= form_for @new_rap, class: "form-control" do |f| %>
+            <%= form_for @rap, class: "form-control" do |f| %>
         
-                <%= f.label :選手名 %><br>
-                <%= f.collection_select :record_id, @user.records.all, :id, :name %></br>
-
+                <%= f.hidden_field :record_id,:value => @record.id,class:"form-control" %>
                 <%= f.label :距離 %>
                 <%= f.number_field :distance, class:"form-control"%>
 
@@ -22,7 +20,7 @@
         <% end %> 
     </div>
     <div class="col-offset-xs-1 col-xs-10 col-offset-xs-1 col-lg-5">
-        <h2>記録詳細</h2>
+        <h3>記録詳細</h3>
         <div class="record-main">
             <table class="table table-striped">
              　<tr>
@@ -33,15 +31,15 @@
                 </thead>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><%= @record.athletic_event.name %></td>
                     <td><%= @record.time %></td>
                     <td><%= link_to '編集', edit_record_path(@record) %></td>
                 </tr>
         </table>
-        <%= link_to @record.competition.name, competition_path(@competition) %>へ戻る
+        <%= link_to @record.competition.name, competition_path(@competition) %>に戻る
 
         <!--トータル距離のグラフ-->
-        <%= line_chart @record.raps.all.pluck(:created_at,:rap_time), max: 60,title: "tap time" %>
+        <%= line_chart @record.raps.all.pluck(:created_at,:rap_time), max: 60,title: "rap time" %>
         <!--x軸y軸の設定はpluck(:x軸,：y軸)でいけるy-->
         
         </div>  
@@ -50,7 +48,7 @@
         
         <table class="table table-striped">
     　      <tr>
-                <h2>ラップ一覧</h2>
+                <h3>ラップ一覧</h3>
                 <thead>
                     <th>距離</th>
                     <th>ラップタイム</th>
