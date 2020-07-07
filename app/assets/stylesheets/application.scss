@@ -13,14 +13,14 @@
  *= require_tree .
  *= require_self
  */
-//  いいねボタン用
- @import "font-awesome";
-
 //  bootstrap導入
  @import "bootstrap-sprockets";
  @import "bootstrap";
 //  summernote導入
  @import "summernote-bs4";
+//  @import "summernote-custom-theme.min";
+//  いいねボタン用
+@import "font-awesome";
 
 html {
     min-height: 100%;
@@ -40,7 +40,6 @@ html {
     position: absolute;    
 }
 
-
 .clearfix::after {
     content: "";
     display: block;
@@ -51,7 +50,7 @@ html {
 
 .top-main {
     height: 800px;
-    width: 100％;
+    width: max;
     background-image: image-url("top-background.jpeg");
     background-size: cover;
     background-position: center;
@@ -66,24 +65,13 @@ html {
   
 
 .no1 {
-
+    padding: 80px 0;
 }
-.top-h1 {
-    color: #fff;
-    margin-top: 10px;
-}
-.top-h3 {
-    padding-top: 20px;
-    color: #fff;
-}
-.top-message {
-    padding-left: 25px;
+.top-h1, .top-h2 {
     color: #fff;
 }
 
 
-.top-content1, .top-content2 {
-    height: 400px;
-}
-
-
+// .top-content {
+//     background: linear-gradient( #1F1C2C,#fff,#928dab, #1F1C2C);
+// }

@@ -58,7 +58,15 @@
                      <%= link_to competition.name, competition_path(competition) %>
                   </td>
                </tr>
+               <% end %>
             <% end %>
+         <% else %>
+            <% @h_competitions.each do |competition| %>
+            <tr>
+               <td>
+                  <%= link_to competition.name, competition_path(competition) %>
+               </td>
+            </tr>
             <% end %>
          <% end %>
 

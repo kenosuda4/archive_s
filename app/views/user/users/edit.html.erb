@@ -11,12 +11,6 @@
 
             <%= f.label :introduction %>
             <%= f.text_area :introduction, 'data-provider': :summernote %>
-    
-            <p>会員ステータス</p>
-            <%= f.label :在籍会員 %>
-            <%= f.radio_button :is_deleted, false %>
-            <%= f.label :退会済み　%>
-            <%= f.radio_button :is_deleted, true %>
 
             <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
 

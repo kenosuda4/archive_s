@@ -13,7 +13,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # end
 
 # Use sqlite3 as the database for Active Record
-#sqliteはコメントアウト
+#sqliteはコメントアウト?
 gem 'sqlite3'
 
 # Use Puma as the app server

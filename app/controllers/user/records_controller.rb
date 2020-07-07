@@ -43,7 +43,7 @@ class User::RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:user_id, :competition_id, :athletic_event_id, :name, :name, :time)
+    params.require(:record).permit(:user_id, :competition_id, :athletic_event_id, :name, :time)
   end
 
   def set_record
