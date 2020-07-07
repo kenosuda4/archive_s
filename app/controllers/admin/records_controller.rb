@@ -1,5 +1,6 @@
 class Admin::RecordsController < ApplicationController
-
+  #管理者ログインしなければ使えない
+  before_action :authenticate_admin!
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   def show

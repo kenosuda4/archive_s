@@ -13,7 +13,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # end
 
 # Use sqlite3 as the database for Active Record
-#sqliteはコメントアウト
+#sqliteはコメントアウト?
 gem 'sqlite3'
 
 # Use Puma as the app server
@@ -73,7 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #ログイン
 gem 'devise'
 #デザイン面その他
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 #ページネイション
@@ -108,5 +108,8 @@ gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+#デプロイ後 s3画像投稿用
+gem 'fog-aws'
+
 # いいねボタン
 gem 'font-awesome-rails'
