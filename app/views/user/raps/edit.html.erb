@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row no1">
+        <div class="col-offset-xs1 col-xs-10 col-offset-lg-1 col-lg-10">
+            <h3>編集</h3>
+            <%= form_for @rap, class: "form-control" do |f| %>
+    
+                <%= f.label :選手名 %><br>
+                <%= f.collection_select :record_id, @user.records.all, :id, :name %></br>
+
+                <%= f.label :距離 %>
+                <%= f.number_field :distance, class:"form-control"%>
+
+                <%= f.label :ラップタイム %>
+                <%= f.number_field :rap_time, step: '0.01', class:"form-control"%>
+
+                <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+            <% end %>
+            
+        </div>
+    </div>
+</div>

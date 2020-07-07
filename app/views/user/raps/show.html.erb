@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row no1">
+    <div class="col-xs-3">
+        <% if user_signed_in? %>
+        <% end %> 
+    </div>
+    <div class="col-xs-3">
+        <h2>ラップ詳細</h2>
+        <div class="record-main">
+            <table class="table table-striped">
+             　<tr>
+                <thead>
+                    <th><%= link_to @rap.record.name, record_path(@record) %></th>
+                    <th></th>
+                </thead>
+                </tr>
+                <tr>
+                    <td><%= @rap.distance %>m</td>
+                    <td><%= @rap.rap_time %></td>
+                    <td><%= link_to '編集', edit_rap_path(@rap) %></td>
+                </tr>
+        </table>
+
+    </div>
+    </div>
+</div>
+</div>

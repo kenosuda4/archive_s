@@ -17,6 +17,9 @@ class User::RecordsController < ApplicationController
   def show
     @competition = @record.competition
     @user = @record.user
+    @new_rap = Rap.new
+
+    @raps = @record.raps.all
   end
 
   def edit
