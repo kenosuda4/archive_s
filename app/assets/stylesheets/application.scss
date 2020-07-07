@@ -13,17 +13,32 @@
  *= require_tree .
  *= require_self
  */
-//  いいねボタン用
- @import "font-awesome";
-
 //  bootstrap導入
  @import "bootstrap-sprockets";
  @import "bootstrap";
 //  summernote導入
  @import "summernote-bs4";
 //  @import "summernote-custom-theme.min";
+//  いいねボタン用
+@import "font-awesome";
 
+html {
+    min-height: 100%;
+    position: relative;
+  }
+   
+  body {
+    margin-bottom: 30px;
+  }
 
+  footer{
+    background-color: #444;   
+    width:100%;
+    padding: 10px 0;          
+    bottom: 0;
+    height: 30px;
+    position: absolute;    
+}
 
 .clearfix::after {
     content: "";

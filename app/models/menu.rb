@@ -1,7 +1,7 @@
 class Menu < ApplicationRecord
     belongs_to :user
     belongs_to :genre
-    has_many :bookmarks
+    has_many :bookmarks, dependent: :destroy
     #名前を被らせない sourceで参照
     has_many :bookmarks_users, through: :bookmarks, source: :user
     def bookmarked_by?(user)

@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  #管理者ログインしなければ使えない
+  before_action :authenticate_admin!
   before_action :set_user, only: [:show, :edit, :update,]
   
   def index
