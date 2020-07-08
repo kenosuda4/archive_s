@@ -8,8 +8,6 @@ class Menu < ApplicationRecord
         bookmarks.where(user_id: user.id).exists?
     end
 
-    has_many :records
-
     with_options presence: true do
         validates :name
         validates :genre_id
