@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update, :destroy]
     resources :records, only: [:show, :edit, :update, :destroy]
     resources :raps, only: [:create, :show, :edit, :update, :destroy]
+
   end
   #: :を忘れてエラー
   scope module: :user do
