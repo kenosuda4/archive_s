@@ -1,7 +1,7 @@
 <header class="header">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12" style="height:100px;">
+      <div class="col-xs-12" style="height:85px;">
         <nav class="clearfix" style="line-height: 15px;font-size: 15px;">
           <ul class="nav navbar-nav av navbar-nav navbar-right header-navi">
             <% if admin_signed_in? %>
@@ -12,7 +12,7 @@
               <li><%= link_to "ユーザー 一覧", admin_users_path %></li>
               <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
             <% elsif user_signed_in? %>
-            <li>Login User  <%= current_user.name %></li>
+            <li class="user-name">Login User  <%= current_user.name %></li>
             <li><%= link_to "メニュー 一覧", menus_path %></li>
             <li><%= link_to "ユーザー 一覧", users_path %></li>
             <li><%= link_to "マイページ", user_path(current_user) %></li>
@@ -20,6 +20,7 @@
             <% else %>
             <li><%= link_to "メニュー 一覧", menus_path %></li>
             <li><%= link_to "ユーザー 一覧", users_path %></li>
+            <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
             <li><%= link_to 'ログイン', new_user_session_path %></li>
             <li><%= link_to '新規登録', new_user_registration_path %></li>
             <li><%= link_to 'ログイン 管理者', new_admin_session_path %></li>

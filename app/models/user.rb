@@ -23,4 +23,12 @@ class User < ApplicationRecord
        
   mount_uploader :image, ImageUploader
 
+  # テストログイン用
+  def self.guest
+    find_or_create_by!(name: 'guest',email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
+
 end

@@ -1,6 +1,9 @@
 <div class="container">
 <div class="row no1">
     <div class="col-xs-6">
+      <% if @user.email == "aguest@example.com" %>
+        <p>ゲストユーザーは編集できません</p>
+      <% else %>
         <%= form_for @user, class: "form-control" do |f| %>
             <%= f.file_field :image %>
 
@@ -13,8 +16,8 @@
             <%= f.text_area :introduction, 'data-provider': :summernote %>
 
             <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
-
-     <% end %>
+        <% end %>
+      <% end %>
     </div>
 </div>
 </div>

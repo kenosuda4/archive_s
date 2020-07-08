@@ -15,9 +15,14 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   } 
+   # テストログイン機能
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
+  # post '/homes/guest_sign_in', to: 'homes#new_guest'
 
+  # 検索
   get '/search' => 'searchs#search', as: 'search' 
-
 
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
