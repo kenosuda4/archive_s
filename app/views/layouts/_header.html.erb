@@ -1,22 +1,9 @@
 <header class="header">
   <div class="container">
     <div class="row">
-<<<<<<< HEAD
       <div class="col-xs-12" style="height:100px;">
         <nav class="clearfix" style="line-height: 15px;font-size: 15px;">
           <ul class="nav navbar-nav av navbar-nav navbar-right header-navi">
-=======
-      <div class="col-xs-3"  style="height:20px;">
-        <nav class="nav navbar-nav navbar-left">
-          <span class="header-logo">
-
-          </span>
-        </nav>
-      </div>
-      <div class="col-xs-9" style="height:20px;">
-        <nav class="clearfix" style="line-height: 20x;font-size: 15px;">
-          <ul class="nav navbar-nav navbar-right header-navi">
->>>>>>> b75fab52438331ac27606c986a142ebded81e0a1
             <% if admin_signed_in? %>
              <li><%= link_to "お知らせ一覧", admin_informations_path %></li>
               <li><%= link_to "種目一覧", admin_athletic_events_path %></li>
@@ -24,7 +11,6 @@
               <li><%= link_to "メニュー 一覧", admin_menus_path %></li>
               <li><%= link_to "ユーザー 一覧", admin_users_path %></li>
               <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-<<<<<<< HEAD
             <% elsif user_signed_in? %>
             <li>Login User  <%= current_user.name %></li>
             <li><%= link_to "メニュー 一覧", menus_path %></li>
@@ -54,19 +40,5 @@
         </nav>
       </div>
     </div>
-=======
-              <% elsif user_signed_in? %>
-              <li>ようこそ、<%= current_user.name %>さん！</li>
-
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <% else %>
-
-              <li><%= link_to 'ログイン', new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </nav>
-    
-      </div>
->>>>>>> b75fab52438331ac27606c986a142ebded81e0a1
   </div>
 </header>
