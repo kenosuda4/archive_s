@@ -28,17 +28,19 @@
                     <th><%= @record.name %></th>
                     <th></th>
                     <th></th>
+                    <th></th>
                 </thead>
                 </tr>
                 <tr>
                     <td><%= @record.athletic_event.name %></td>
                     <td><%= @record.time %></td>
                     <td><%= link_to '編集', edit_record_path(@record) %></td>
+                    <td><%= link_to "Destroy", record_path(@record.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
                 </tr>
         </table>
         <%= link_to @record.competition.name, competition_path(@competition) %>に戻る
 
-        <!--トータル距離のグラフ-->
+        <!--ラップのグラフ-->
         <%= line_chart @record.raps.all.pluck(:created_at,:rap_time), max: 60,title: "rap time" %>
         <!--x軸y軸の設定はpluck(:x軸,：y軸)でいけるy-->
         
@@ -53,6 +55,7 @@
                     <th>距離</th>
                     <th>ラップタイム</th>
                     <th></th>
+                    <th></th>
                 </thead>
             </tr>
             <% @raps.each do |rap| %>
@@ -60,6 +63,7 @@
                 <td><%= rap.distance %>m</td>
                 <td><%= rap.rap_time %></td>
                 <td><%= link_to '編集', edit_rap_path(rap) %></td>
+                <td><%= link_to "Destroy", rap_path(rap.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
             </tr>
             <% end %>
         </table>

@@ -1,16 +1,13 @@
 <div class="container">
 <div class="row no1">
-    <div class="col-xs-3">
-        <% if user_signed_in? %>
-        <% end %> 
-    </div>
-    <div class="col-xs-3">
+    <div class="col-offset-xs-1 col-xs-10 col-offset-lg-2 col-lg-8">
         <h2>ラップ詳細</h2>
         <div class="record-main">
-            <table class="table table-striped">
+            <table class="table">
              　<tr>
                 <thead>
                     <th><%= link_to @rap.record.name, record_path(@record) %></th>
+                    <th></th>
                     <th></th>
                 </thead>
                 </tr>

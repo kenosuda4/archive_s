@@ -8,7 +8,7 @@ class User::RapsController < ApplicationController
     @rap = Rap.new(rap_params)
     @rap.user_id = current_user.id
     if @rap.save!
-       redirect_to rap_path(@rap)
+       redirect_to record_path(@rap.record)
     else
       @user = current_user
       @user.id = current_user.id
@@ -28,14 +28,14 @@ class User::RapsController < ApplicationController
 
   def update
     if @rap.update(rap_params)
-      redirect_to rap_path(@rap)
+      redirect_to record_path(@rap.record)
     else
       render 'edit'
     end
   end
 
   def destroy
-    if @rap.destroy
+    if @rap.destroy!
       redirect_to record_path(@record)
     else
       redirect_to competitions_path

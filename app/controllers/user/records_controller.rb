@@ -39,7 +39,7 @@ class User::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to competition_path(@competition)
+      redirect_to competition_path(@record.competition.id)
     else
       redirect_to competitions_path
     end
