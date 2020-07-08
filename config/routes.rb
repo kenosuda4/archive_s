@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     resources :competitions, only: [:index, :show, :edit, :update, :destroy]
     resources :users, only: [:index, :show, :edit, :update, :destroy]
     resources :records, only: [:show, :edit, :update, :destroy]
+    resources :raps, only: [:create, :show, :edit, :update, :destroy]
+
   end
   #: :を忘れてエラー
   scope module: :user do
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:index]
     resources :competitions
     resources :records, only: [:create, :show, :edit, :update, :destroy]
+    resources :raps, only: [:create, :show, :edit, :update, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

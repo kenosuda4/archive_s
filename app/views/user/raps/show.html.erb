@@ -1,0 +1,24 @@
+<div class="container">
+<div class="row no1">
+    <div class="col-offset-xs-1 col-xs-10 col-offset-lg-2 col-lg-8">
+        <h2>ラップ詳細</h2>
+        <div class="record-main">
+            <table class="table">
+             　<tr>
+                <thead>
+                    <th><%= link_to @rap.record.name, record_path(@record) %></th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                </tr>
+                <tr>
+                    <td><%= @rap.distance %>m</td>
+                    <td><%= @rap.rap_time %></td>
+                    <td><%= link_to '編集', edit_rap_path(@rap) %></td>
+                </tr>
+        </table>
+
+    </div>
+    </div>
+</div>
+</div>

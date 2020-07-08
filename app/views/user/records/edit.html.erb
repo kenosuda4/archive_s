@@ -1,23 +1,22 @@
 <div class="container">
 <div class="row no1">
     <div class="col-offset-xs-3 col-xs-6">
-    <h3>新規投稿</h3>
-    <%= form_for @record, class: "form-control" do |f| %>
-        
-        <%= f.label :大会名 %>
-            <%= f.collection_select :competition_id, @user.competitions.all, :id, :name %><br>
+        <h3>編集</h3>
+            <%= form_for @record, url: record_path, method: :patch, class: "form-control" do |f| %>
+                    
+                <%= f.hidden_field :competition_id,:value => @competition.id,class:"form-control" %>
+                
+                    <%= f.label :種目 %><br>
+                    <%= f.collection_select :athletic_event_id, AthleticEvent.all, :id, :name %><br>
     
-            <%= f.label :種目 %>
-            <%= f.collection_select :athletic_event_id, AthleticEvent.all, :id, :name %><br>
-
-            <%= f.label :選手名 %>
-            <%= f.text_area :name %><br>
-
-            <%= f.label :記録 %>
-            <%= f.text_area :time %>
-
-            <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
-    <% end %>
+                    <%= f.label :選手名 %>
+                    <%= f.text_area :name, class:"form-control" %>
+    
+                    <%= f.label :記録 %>
+                    <%= f.text_area :time, class:"form-control"%>
+       
+                    <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+                <% end %>
     </div>
 </div>
 </div>

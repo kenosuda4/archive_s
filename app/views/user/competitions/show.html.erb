@@ -37,10 +37,9 @@
             <% if user_signed_in? %>
                 <% if current_user.id == @user.id %>
                 <h3>新規投稿</h3>
-                <%= form_for @record, url: records_path, method: :post, class: "form-control" do |f| %>
+                    <%= form_for @record, url: records_path, method: :post, class: "form-control" do |f| %>
                     
-                        <%= f.label :大会名 %><br>
-                        <%= f.collection_select :competition_id, @user.competitions.all, :id, :name %></br>
+                        <%= f.hidden_field :competition_id,:value => @competition.id,class:"form-control" %>
                 
                         <%= f.label :種目 %><br>
                         <%= f.collection_select :athletic_event_id, AthleticEvent.all, :id, :name %><br>

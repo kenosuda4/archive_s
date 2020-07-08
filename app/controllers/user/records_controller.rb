@@ -4,6 +4,7 @@ class User::RecordsController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   
   def create
+    @competition = Competition.find_by_id(params[:id])
     @record = Record.new(record_params)
     @record.user_id = current_user.id
     if @record.save!
@@ -15,13 +16,17 @@ class User::RecordsController < ApplicationController
   end
 
   def show
+    @record = Record.find_by_id(params[:id])
     @competition = @record.competition
+    @athletic_event = @record.athletic_event
     @user = @record.user
+    @rap = Rap.new
+    @raps = @record.raps.all 
   end
 
   def edit
     @user = current_user
-    @competitons = @user.competitions.all
+    @competition = @record.competition
   end
 
   def update
@@ -34,7 +39,7 @@ class User::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to competition_path(@competition)
+      redirect_to competition_path(@record.competition.id)
     else
       redirect_to competitions_path
     end
