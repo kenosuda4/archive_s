@@ -5,14 +5,14 @@ class User::UsersController < ApplicationController
 
   
   def index
-    @users = User.all
+    @users = User.where(is_deleted: false).page(params[:page]).reverse_order
   end
 
   def show
-    @h_menus = @user.menus.where(is_valid: true)
-    @menus = @user.menus.all
-    @competitions = @user.competitions.all
-    @h_competitions = @user.competitions.where(is_valid: true)
+    @h_menus = @user.menus.where(is_valid: true).page(params[:menu]).per(5).reverse_order
+    @menus = @user.menus.page(params[:menu]).per(5).reverse_order
+    @competitions = @user.competitions.page(params[:competition]).per(5).reverse_order
+    @h_competitions = @user.competitions.where(is_valid: true).page(params[:competition]).per(5).reverse_order
   end
 
   def edit

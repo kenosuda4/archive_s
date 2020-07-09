@@ -8,7 +8,7 @@ class User::MenusController < ApplicationController
 
 
   def index
-    @menus = Menu.where(is_valid: true)
+    @menus = Menu.where(is_valid: true).page(params[:page]).reverse_order
   end
 
   def new
