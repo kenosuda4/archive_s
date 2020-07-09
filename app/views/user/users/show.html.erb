@@ -60,6 +60,7 @@
                   </td>  
                </tr>
                <% end %>
+               <%= paginate @competitions, :param_name => 'competition' %>
                <% else %>
                <% @h_competitions.each do |competition| %>
                <tr>
@@ -68,6 +69,7 @@
                   </td>
                </tr>
                <% end %>
+               <%= paginate @competitions, :param_name => 'competition' %>
             <% end %>
          <% else %>
             <% @h_competitions.each do |competition| %>
@@ -77,6 +79,7 @@
                </td>
             </tr>
             <% end %>
+            <%= paginate @competitions, :param_name => 'competition' %>
          <% end %>
 
         </table>
@@ -107,6 +110,7 @@
         </td>
       </tr>
        <% end %>
+       <%= paginate @menus, :param_name => 'menu' %>
       <% else %>
          <% @h_menus.each do |menu| %>
             <td>
@@ -120,6 +124,7 @@
             </td>
       </tr>
         <% end %>
+        <%= paginate @h_menus, :param_name => 'menu' %>
       <% end %>
       <% else %>
       <% @h_menus.each do |menu| %>
@@ -134,6 +139,7 @@
          </td>
    </tr>
      <% end %>
+     <%= paginate @h_menus, :param_name => 'menu' %>
    <% end %>
     　
     </table>
