@@ -1,17 +1,17 @@
 class User::RecordsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_record, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   
   def create
     @competition = Competition.find_by_id(params[:id])
     @record = Record.new(record_params)
     @record.user_id = current_user.id
-    if @record.save!
+    if @record.save
       redirect_to record_path(@record)
     else
       @competitons = Competition.all
-      redirect_to competitons_path
+      redirect_to request.referrer 
     end
   end
 

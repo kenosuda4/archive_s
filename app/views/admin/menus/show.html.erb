@@ -25,7 +25,7 @@
             合計距離
             <%= @menu.total_distance %>m<br>
 
-            <%= link_to user_path(@user), class: "btn-link" do %>
+            <%= link_to admin_user_path(@menu.user), class: "btn-link" do %>
                 <%= @menu.user.name %>
             <% end %>
 

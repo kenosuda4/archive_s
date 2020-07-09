@@ -5,17 +5,19 @@ class Admin::RecordsController < ApplicationController
 
   def show
     @competition = @record.competition
+    @athletic_event = @record.athletic_event
     @user = @record.user
+    @raps = @record.raps.all 
   end
 
   def edit
     @user = @record.user
-    @competitons = @user.competitions.all
+    @competition = @record.competition
   end
 
   def update
     if @record.update(record_params)
-      redirect_to admin_competition_path(@competition)
+      redirect_to admin_record_path(@record)
     else
       render 'edit'
     end
@@ -23,7 +25,7 @@ class Admin::RecordsController < ApplicationController
 
   def destroy
     if @record.destroy
-      redirect_to admin_competition_path(@competition)
+      redirect_to admin_competition_path(@record.competition)
     else
       redirect_to admin_competitions_path
     end

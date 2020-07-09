@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update,]
   
   def index
-    @users = User.all
+    @users = User.page(params[:page]).reverse_order
   end
 
   def show
