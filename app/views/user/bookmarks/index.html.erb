@@ -1,10 +1,23 @@
 <div class="container">
 <div class="row no1">
     <div class="col-xs-offset-3 col-xs-6">
-    <p> user bookmarks</p>
-    <% current_user.bookmarks_menus.each do |menu| %>
-        <li><%= link_to menu.name, menu_path(menu) %> <%=  menu.user.name %></li>
-    <% end %>
+        <table class="table table-striped">
+            <h2>ブックマーク一覧</h2>
+            <thead>
+                <tr>
+                    <th>ユーザー</th>
+                    <th>メニュー</th>
+                </tr>
+            </thead>
+            
+            <% current_user.bookmarks_menus.each do |menu| %>
+                <tr>
+                    <td> <%=  menu.user.name %></td>
+                    <td><%= link_to menu.name, menu_path(menu) %></td>
+                </tr>
+            <% end %>
+            <%= paginate @bookmarks %>
+        </table>
     </div>
 </div>
 </div>

@@ -1,14 +1,14 @@
 class User::MenusController < ApplicationController
   #ログインしなければ使えない
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   #特定アクションの重複記述まとめる
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :set_genres, only: [:edit, :update, :new, :create, :destry]
 
 
   def index
-    @menus = Menu.where(is_valid: true).page(params[:page]).reverse_order
+    @menus = Menu.where(is_valid: true).page(params[:page]).per(5).reverse_order
   end
 
   def new

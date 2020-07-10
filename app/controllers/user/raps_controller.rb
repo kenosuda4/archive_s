@@ -1,18 +1,18 @@
 class User::RapsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_rap, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def create
     @record = Record.find_by_id(params[:id])
     @rap = Rap.new(rap_params)
     @rap.user_id = current_user.id
-    if @rap.save!
+    if @rap.save
        redirect_to record_path(@rap.record)
     else
       @user = current_user
       @user.id = current_user.id
-      redirect_to user_path(@user)
+      redirect_to request.referrer 
     end
   end
 
@@ -22,6 +22,7 @@ class User::RapsController < ApplicationController
   end
 
   def edit
+    # @record = Record.find_by_id(params[:id])
     @record = @rap.record
     @user = @rap.user
   end
@@ -30,13 +31,14 @@ class User::RapsController < ApplicationController
     if @rap.update(rap_params)
       redirect_to record_path(@rap.record)
     else
+      @record = @rap.record
       render 'edit'
     end
   end
 
   def destroy
     if @rap.destroy!
-      redirect_to record_path(@record)
+      redirect_to record_path(@rap.record)
     else
       redirect_to competitions_path
     end

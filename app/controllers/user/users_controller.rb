@@ -1,7 +1,7 @@
 class User::UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
-  before_action :set_user, only: [:show, :edit, :update,]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update]
 
   
   def index
@@ -24,7 +24,7 @@ class User::UsersController < ApplicationController
     else
       render 'edit'
     end
-  end
+  end 
 
   private
 

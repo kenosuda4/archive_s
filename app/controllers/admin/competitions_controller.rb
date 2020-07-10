@@ -17,8 +17,8 @@ class Admin::CompetitionsController < ApplicationController
   end
 
   def update
-    if @competition = Competition.update(competition_params)
-       redirect_to admin_competitions_path
+    if @competition.update(competition_params)
+       redirect_to admin_competition_path(@competition)
     else
       render 'show'
     end
@@ -35,7 +35,7 @@ class Admin::CompetitionsController < ApplicationController
   private
 
   def competition_params
-    params.require(:competiton).permit(:name, :genre_id, :summary, :is_valid)
+    params.require(:competition).permit(:name, :genre_id, :summary, :is_valid)
   end
   
   def set_competition

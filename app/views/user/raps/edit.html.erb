@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row no1">
         <div class="col-offset-xs1 col-xs-10 col-offset-lg-1 col-lg-10">
-        <h3>ラップタイム追加</h3>
+        <h3>ラップタイム編集</h3>
+        <p>選手名 <%= @rap.record.name %></p>
+        <p>大会名 <%= @rap.record.competition.name %></p>
         <%= form_for @rap, class: "form-control" do |f| %>
     
             <%= f.hidden_field :record_id,:value => @record.id,class:"form-control" %>
@@ -11,7 +13,7 @@
             <%= f.label :ラップタイム %>
             <%= f.number_field :rap_time, step: '0.01', class:"form-control"%>
 
-            <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+            <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
         <% end %>
             
         </div>

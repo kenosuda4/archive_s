@@ -5,6 +5,7 @@
                         <tr>
                                 <th>user name</th>
                                 <th>menu count</th>
+                                <th>competition count</th>
                         </tr>
                         <% @users.each do |user| %>
                         <tr>
@@ -16,8 +17,12 @@
                                 <td>
                                 <%= user.menus.count %>
                                 </td>
+                                <td>
+                                <%= user.competitions.count %>
+                                </td>
                         </tr>
                         <% end %>
+                        <%= paginate @users %>
                 </table>
                 </div>
         </div>

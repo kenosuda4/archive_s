@@ -5,7 +5,7 @@ class Admin::MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   
   def index
-    @menus = Menu.all
+    @menus = Menu.page(params[:page]).reverse_order
   end
 
   def show

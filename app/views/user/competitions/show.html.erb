@@ -32,7 +32,10 @@
                     <% end %>
                 <% else %>
                 <% end %>  
-            </table>
+            </table><br />
+            <%= link_to :back do %>
+                <button>戻る</button>
+            <% end %>
 
             <% if user_signed_in? %>
                 <% if current_user.id == @user.id %>
