@@ -52,7 +52,7 @@ class User::MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:name, :genre_id, :introduction, :image, :total_distance, :is_valid)
+    params.require(:menu).permit(:name, :genre_id, :content, :image, :total_distance, :is_valid)
   end
 
   def set_menu
