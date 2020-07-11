@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_031828) do
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.integer "genre_id"
-    t.text "introduction"
+    t.text "content"
     t.string "image"
     t.string "user_id"
     t.integer "total_distance"
