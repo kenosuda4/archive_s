@@ -1,24 +1,28 @@
 <div class="container-fluid">
    <div class="row top-main">
       <div class="col-offset-md-3 col-md-9">   
-      <h1 class="top-h1">Archive.S</h1>
-         <h3 class="top-h3">多くの水泳競技者のために</h3>
+      
+         <h3 class="top-h3">多くの競技者のために</h3>
          <div class="top-message">
-            膨大な量になるトレーンングメニュー<br>
+            膨大な量になるトレーニングメニュー<br>
             手書きのノートも、データのメニューも同じように管理できる<br>
+            できることなら大会の結果も気軽に管理したい<br>
             水泳・オープンウォーター・トライアスロンなどの競技者・指導者向けに<br>
-            そんなサービスを提供できることを目指し、このサイトを作成しました
-         </div>
-      </div>
-      <div class="col-md-2 col-offset-md-1"> 
-         <% if admin_signed_in? %>
+            そんなサービスを提供できることを目指し、このサイトを作成しました<br />
+            
+            ゲストユーザー機能がありますので、是非お試しください。<br />
+            ※右上ヘッダー
+
+            <% if admin_signed_in? %>
             <div class="count-box">
                <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
                <p>登録メニュー数<%= link_to @menus.count, admin_menus_path, :style=>"color:yellow;" %>件<p>
                <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
             </div>
-         <% else %>
-         <% end %>
+            <% else %>
+            <% end %>
+
+         </div>
       </div>
    </div>
 </div>
@@ -27,20 +31,30 @@
       <div class="col-lg-offset-2 col-lg-8 col-xs-12">
          <div class="top-content">
             <div class="top-content1">
-               <h4 class="top-h4">利用方法</h4>
+               <h4 class="top-h4">利用方法① メニュー管理</h4>
                メニューの画像(スクリーンショットなど)か内容とトータル距離を入力して保存。<br>
                トータル距離を元に自動でグラフが作成され、1回1回の練習の距離をグラフで把握できます。<br />
-               <br />
-               <p>イメージ画像</p>
+               また、他のユーザーのメニューをブックマークすることもできます
+               <br /><br />
+               <p>※イメージ画像 メニュー管理</p>
                <div class="top-image">
-                  <%= image_tag asset_path('menu.png'), :size =>'620x440' %><br />
-
+                  <%= image_tag asset_path('menu.png'), :size =>'620x40' %><br /><br />
+                  
                   <%= image_tag asset_path('graph.png'), :size =>'620x440' %>
                </div>
-            </div>
-
+               <br /><br />
+               <h4 class="top-h4">利用方法② 大会記録管理</h4>
+               出場した大会を登録<br />
+               その後出場者名と種目、記録を入力して保存<br />
+               登録された記録に対し、ラップタイムを入力すればラップタイムの変遷を<br />
+               グラフで表示できます。<br /><br />
+               <p>※イメージ画像 大会記録管理</p>
+               <div class="top-image">
+                  <%= image_tag asset_path('competition.png'), :size =>'620x330' %><br /><br />
                   
-
+                  <%= image_tag asset_path('record.png'), :size =>'620x340' %>
+               </div>
+            </div>
          </div>
       </div>
    </div>

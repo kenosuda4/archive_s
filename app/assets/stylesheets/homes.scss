@@ -4,7 +4,7 @@
 
 .top-main {
     padding: 30px 0;
-      height: 800px;
+      height: 650px;
       width: max;
       background-image: image-url("top-background.jpeg");
       background-size: cover;
@@ -17,13 +17,12 @@
 .top-image{
     margin: auto;
 }
-  
-    
-
 
 .top-message {
     color: #fff;
+    padding-left: 70px;
 }
+
 .top-content {
     padding: 20px;            
     width: max;
@@ -38,7 +37,12 @@
     margin: 0 45px;
 }
 
-.top-h1,.top-h3 {
+.top-h1 {
+    
+    color: #fff;
+}
+.top-h3 {
+    padding-left: 40px;
     color: #fff;
 }
 .count-box {

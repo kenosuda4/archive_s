@@ -91,17 +91,14 @@
     <table class="table table-striped">
     　<tr>
        <thead>
-           <th>user name</th>
-           <th>menu name</th>
+           <th>メニュー</th>
+           <th>距離</th>
        </thead>
      </tr>
      <tr>
      <% if user_signed_in? %>
       <% if current_user.id == @user.id %>
        <% @menus.each do |menu| %>
-        <td>
-            <%= link_to @user.name, user_path(@user.id) %>
-        </td>
         <td>
            <%= link_to menu.name, menu_path(menu) %>
         </td>
@@ -114,9 +111,6 @@
       <% else %>
          <% @h_menus.each do |menu| %>
             <td>
-               <%= link_to @user.name, user_path(@user.id) %>
-            </td>
-            <td>
                <%= link_to menu.name, menu_path(menu) %>
             </td>
             <td>
@@ -128,9 +122,6 @@
       <% end %>
       <% else %>
       <% @h_menus.each do |menu| %>
-         <td>
-            <%= link_to @user.name, user_path(@user.id) %>
-         </td>
          <td>
             <%= link_to menu.name, menu_path(menu) %>
          </td>
