@@ -2,15 +2,12 @@
 <div class="row no1">
         <div class="col-xs-12 col-lg-6">
         <% if @menu.image? %>
-        
-        <%=  link_to @menu.image.url, 'data-lightbox': @menu.image do %>
-            <%= image_tag @menu.image.thumb.url %>
-        <% end %>
-
-        <% else %>
-            <%= image_tag @menu.image.thumb.url %>
-        <% end %>
-        
+                <%=  link_to @menu.image.url, 'data-lightbox': @menu.image do %>
+                    <%= image_tag @menu.image.thumb.url %>
+                <% end %>
+            <% else %>
+                <%= image_tag @menu.image.thumb.url %>
+            <% end %>
         </div>
         <div class="col-offset-lg-1 col-lg-3 col-xs-12">
       
@@ -18,14 +15,9 @@
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="menu-content">
+                <h4>Menu name:<%= @menu.name %> </h4>
                 ユーザー
                 <%= link_to @menu.user.name, user_path(@user) %><br />
-                メニュータイトル
-                <%= @menu.name %><br />
-
-                内容
-                <%= @menu.content.html_safe %><br>
-            
                 合計距離
                 <%= @menu.total_distance %>m<br>
                 <% if @menu.is_valid == true %>
@@ -33,6 +25,8 @@
                 <% else %>
                 <p>ステータス　非公開<br>
                 <% end %>
+                 内容
+                <%= @menu.content.html_safe %><br>
                 <% if user_signed_in? %>
                     <% if current_user.id == @user.id %>
                         <% else %>

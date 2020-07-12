@@ -23,7 +23,7 @@
             <h4>お知らせ</h4>
             <% @informations.each do |information| %>
                   <%= information.title %><br>
-                  <%= information.info_content %><br>
+                  <p><%= information.info_content %></p>
                <% end %>
             </div>
             <% end %>
