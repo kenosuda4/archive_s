@@ -8,6 +8,10 @@
                     <td><%= @competition.name %></td>
                 </tr>
                 <tr>
+                    <th> ユーザー</th>
+                    <td><%= link_to @competition.user.name, user_path(@competition.user.id) %></td>
+                </tr>
+                <tr>
                     <th>ステータス</th>
                     <%if @competition.is_valid == true %>
                     <td> 公開 </td>
@@ -33,9 +37,6 @@
                 <% else %>
                 <% end %>  
             </table><br />
-            <%= link_to :back do %>
-                <button>前へ戻る</button>
-            <% end %>
 
             <% if user_signed_in? %>
                 <% if current_user.id == @user.id %>
