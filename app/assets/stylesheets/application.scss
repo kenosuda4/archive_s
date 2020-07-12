@@ -30,20 +30,20 @@ html {
   }
    
   body {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
   }
-
-footer {
-    background-color: #000033;   
-    width:100%;
-    padding: 10px 0;          
-    bottom: 0;
-    height: 30px;
-    position: absolute;    
-}
 
 header {
   background-color: #000033;      
+}
+
+footer {
+  background-color: #000033; 
+  height: 70px;  
+  width:100%;
+  padding: 10px 0;          
+  bottom: 0;
+  position: absolute;    
 }
 
 .clearfix::after {

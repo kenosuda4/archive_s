@@ -1,7 +1,6 @@
 <div class="container-fluid">
    <div class="row top-main">
-      <div class="col-offset-md-3 col-md-9">   
-      
+      <div class="col-lg-9">   
          <h3 class="top-h3">多くの競技者のために</h3>
          <div class="top-message">
             膨大な量になるトレーニングメニュー<br>
@@ -20,9 +19,18 @@
                <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
             </div>
             <% else %>
+            <div class="info-box">
+            <h4>お知らせ</h4>
+            <% @informations.each do |information| %>
+                  <%= information.title %><br>
+                  <%= information.info_content %><br>
+               <% end %>
+            </div>
             <% end %>
-
          </div>
+      </div>
+      <div class="col-lg-3">
+         
       </div>
    </div>
 </div>
@@ -38,7 +46,7 @@
                <br /><br />
                <p>※イメージ画像 メニュー管理</p>
                <div class="top-image">
-                  <%= image_tag asset_path('menu.png'), :size =>'620x40' %><br /><br />
+                  <%= image_tag asset_path('menu.png'), :size =>'620x440' %><br /><br />
                   
                   <%= image_tag asset_path('graph.png'), :size =>'620x440' %>
                </div>

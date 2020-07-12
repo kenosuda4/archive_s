@@ -8,12 +8,6 @@
                     <td><%= @competition.name %></td>
                 </tr>
                 <tr>
-                    <th>内容</th>
-                </tr>
-                <tr>
-                    <td><%= @competition.summary.html_safe %></td>
-                <tr>
-                <tr>
                     <th>ステータス</th>
                     <%if @competition.is_valid == true %>
                     <td> 公開 </td>
@@ -21,10 +15,16 @@
                     <td> 非公開 </td>
                     <% end %>
                 </tr>
+                <tr>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <td><%= @competition.summary.html_safe %></td>
+                <tr>
                 <% if user_signed_in? %>
                     <% if current_user.id == @user.id %>
                         <tr>
-                            <td><%= link_to "edit", edit_competition_path(@competition) %></td>
+                            <td><%= link_to "編集", edit_competition_path(@competition) %></td>
                         </tr>
                         <tr>
                             <td> <%= link_to "Destroy", competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
@@ -34,12 +34,13 @@
                 <% end %>  
             </table><br />
             <%= link_to :back do %>
-                <button>戻る</button>
+                <button>前へ戻る</button>
             <% end %>
 
             <% if user_signed_in? %>
                 <% if current_user.id == @user.id %>
-                <h3>新規投稿</h3>
+                <h3>記録追加</h3>
+                <p>※全て入力必須</p>
                     <%= form_for @record, url: records_path, method: :post, class: "form-control" do |f| %>
                     
                         <%= f.hidden_field :competition_id,:value => @competition.id,class:"form-control" %>
