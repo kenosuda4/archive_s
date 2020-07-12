@@ -7,7 +7,7 @@
             <p><%= f.text_area :name %></p>
 
             <%= f.label :概要 %>
-            <%= f.text_area :summary, 'data-provider': :summernote %>
+            <%= f.text_area :summary, 'data-provider': :summernote, class:"summernote" %><br>
 
             <%= f.label :ジャンル %>
             <%= f.collection_select :genre_id, Genre.all, :id, :name %>
@@ -23,3 +23,19 @@
         </div>
     </div>
 </div>
+
+<script>
+$('.summernote').summernote({
+  height: 300,
+  toolbar: [
+    ['style', ['style']],
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['link']],
+    ['table', ['table']],
+  ]
+})
+</script>

@@ -1,7 +1,6 @@
 <div class="container">
 <div class="row no1">
-
-    <div class="col-offset-xs-1 col-xs-10 col-offset-lg-1 col-lg-5">
+    <div class="col-offset-xs-1 col-xs-10 col-offset-lg-4 col-lg-5">
         <h2>記録詳細</h2>
         <div class="record-main">
             <table class="table table-striped">
@@ -21,6 +20,10 @@
                 </tr>
         </table>
         <%= link_to @record.competition.name, admin_competition_path(@competition) %>
+
+        <!--ラップのグラフ-->
+        <%= line_chart @record.raps.all.pluck(:created_at,:rap_time), max: 60,title: "rap time" %>
+        <!--x軸y軸の設定はpluck(:x軸,：y軸)でいけるy-->
         </div>
     </div>
     <div class="col-offset-xs-1 col-xs-10 col-offset-xs-1 col-lg-4">

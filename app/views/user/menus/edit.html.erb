@@ -9,7 +9,7 @@
             <%= f.text_field :name, class:"form-control" %><br>
 
             <%= f.label :内容 %><br>
-            <%= f.text_area :content, 'data-provider': :summernote %><br>
+            <%= f.text_area :content, 'data-provider': :summernote, class:"summernote" %><br>
             
             <%= f.label :合計距離 %>
             <%= f.number_field :total_distance, class:"form-control" %>
@@ -27,3 +27,18 @@
     </div>
 </div>
 </div>
+<script>
+$('.summernote').summernote({
+  height: 300,
+  toolbar: [
+    ['style', ['style']],
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['link']],
+    ['table', ['table']],
+  ]
+})
+</script>
