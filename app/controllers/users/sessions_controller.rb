@@ -9,9 +9,17 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  # 退会ユーザー処理
+  def create
+    user = User.find_by(email: sign_in_params[:email])
+    if user == nil
+      super
+    elsif user.is_deleted == true
+      redirect_to homes_invalid_path
+    else
+      super
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy

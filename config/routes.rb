@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'homes#top'
+  get 'homes/invalid' => 'homes#invalid'
 
   #devise admin
   devise_for :admins, controllers: {
@@ -37,7 +38,9 @@ Rails.application.routes.draw do
   end
   #: :を忘れてエラー
   scope module: :user do
-    resources :users, only: [:index, :show, :edit, :update]
+    resources :users, only: [:index, :show, :edit, :update] do
+      delete :quit, on: :member
+    end
     # menu+bookmark
     resources :menus do
       post 'add' => 'bookmarks#create'

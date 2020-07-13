@@ -4,15 +4,15 @@
             <h2>大会詳細</h2>
             <table>
                 <tr>
-                    <th>大会名名</th>
+                    <th>大会名名:</th>
                     <td><%= @competition.name %></td>
                 </tr>
                 <tr>
-                    <th> ユーザー</th>
+                    <th> ユーザー:</th>
                     <td><%= link_to @competition.user.name, user_path(@competition.user.id) %></td>
                 </tr>
                 <tr>
-                    <th>ステータス</th>
+                    <th>ステータス:</th>
                     <%if @competition.is_valid == true %>
                     <td> 公開 </td>
                     <% else %>

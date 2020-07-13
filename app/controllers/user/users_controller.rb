@@ -26,6 +26,14 @@ class User::UsersController < ApplicationController
     end
   end 
 
+  def quit
+    @user = current_user
+    @user.update(is_deleted: true)
+    #update後にログアウトしたい。
+    sign_out @user
+    redirect_to root_path
+end
+
   private
 
   def user_params
