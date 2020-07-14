@@ -67,7 +67,7 @@ class User::MenusController < ApplicationController
     menu = Menu.find(params[:id])
     user = menu.user
     if current_user != user
-      redirect_to menus_path
+      redirect_to root_path
     end
   end
 
