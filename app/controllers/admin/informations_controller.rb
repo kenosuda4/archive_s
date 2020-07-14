@@ -1,9 +1,9 @@
 class Admin::InformationsController < ApplicationController
-  #管理者ログインしなければ使えない
+  # 管理者ログインしなければ使えない
   before_action :authenticate_admin!, only: [:create, :edit, :update, :destroy]
-  #特定アクションの重複記述まとめる
+  # 特定アクションの重複記述まとめる
   before_action :set_information, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @informations = Information.all
     @information = Information.new
@@ -34,7 +34,7 @@ class Admin::InformationsController < ApplicationController
 
   def destroy
     information.destroy
-    redirect_to admin_informations_path	
+    redirect_to admin_informations_path
   end
 
   private
@@ -46,6 +46,4 @@ class Admin::InformationsController < ApplicationController
   def set_information
     @information = Information.find(params[:id])
   end
-
-
 end

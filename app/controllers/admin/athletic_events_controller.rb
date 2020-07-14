@@ -5,7 +5,7 @@ class Admin::AthleticEventsController < ApplicationController
   before_action :set_athletic_events, only: [:show, :edit, :update]
   
   def index
-    @athletic_events =AthleticEvent.all
+    @athletic_events = AthleticEvent.all
     @athletic_event = AthleticEvent.new
   end
 
@@ -32,11 +32,13 @@ class Admin::AthleticEventsController < ApplicationController
     end
   end
 
-    private
-    def athletic_event_params
-      params.require(:athletic_event).permit(:name)
-    end
-    def set_athletic_events
-      @athletic_event = AthleticEvent.find(params[:id])
-    end
+  private
+
+  def athletic_event_params
+    params.require(:athletic_event).permit(:name)
+  end
+
+  def set_athletic_events
+    @athletic_event = AthleticEvent.find(params[:id])
+  end
 end
