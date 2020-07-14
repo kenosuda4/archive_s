@@ -32,7 +32,7 @@ class User::UsersController < ApplicationController
     #update後にログアウトしたい。
     sign_out @user
     redirect_to root_path
-end
+  end
 
   private
 
