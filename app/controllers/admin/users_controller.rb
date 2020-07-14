@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
   #管理者ログインしなければ使えない
   before_action :authenticate_admin!
-  before_action :set_user, only: [:show, :edit, :update,]
+  before_action :set_user, only: [:show, :edit, :update]
   
   def index
     @users = User.page(params[:page]).reverse_order
@@ -26,7 +26,7 @@ class Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name,:image,:introduction,:is_deleted)
+    params.require(:user).permit(:name, :image, :introduction, :is_deleted)
   end
 
   def set_user
