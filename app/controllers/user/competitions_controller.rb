@@ -3,7 +3,7 @@ class User::CompetitionsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @competitions = Competition.all 
+    @competitions = Competition.where(is_valid: true)
   end
 
   def new
@@ -61,7 +61,7 @@ class User::CompetitionsController < ApplicationController
     competition = Competition.find(params[:id])
     user = competition.user
     if current_user != user
-      redirect_to competitions_path
+      redirect_to root_path
     end
   end
 
