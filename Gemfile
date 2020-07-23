@@ -5,8 +5,17 @@ ruby '2.5.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
+
+# mysqlに変更+環境変数化
+# gem 'dotenv-rails'
+# group :production do
+#   gem 'mysql2'
+# end
+
 # Use sqlite3 as the database for Active Record
+#sqliteはコメントアウト?
 gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -60,3 +69,47 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#ログイン
+gem 'devise'
+#デザイン面その他
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+
+#ページネイション
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
+#グラフ メンターさんおすすめはchartkick
+gem "chartkick"
+
+# #画像どちらかにする,とりあえず現状rifile
+# gem "refile", require: "refile/rails", github: 'manfe/refile'
+# gem "refile-mini_magick"
+gem 'carrierwave'
+gem 'mini_magick'
+
+#テキストエディタ
+gem 'bootstrap'
+gem 'summernote-rails'
+gem 'simple_form'
+
+#デバッグ用　
+gem 'pry-byebug'
+
+#パスワードリセット用
+gem 'bcrypt'
+
+#コード確認
+gem 'rubocop-airbnb'
+
+#デプロイ用
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
+#デプロイ後 s3画像投稿用
+gem 'fog-aws'
+
+# いいねボタン
+gem 'font-awesome-rails'

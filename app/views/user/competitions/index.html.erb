@@ -1,0 +1,33 @@
+<div class="row no1">
+    <div class="col-xs-2">
+        
+    </div>
+    <div class="col-xs-8">
+    <h2>大会一覧</h2>
+    <table class="table table-striped">
+    　<tr>
+       <thead>
+           <th>user-name</th>
+           <th>name</th>
+       </thead>
+     </tr>
+     <tr>
+       <% @competitions.each do |competition| %>
+        <td>
+            <%= link_to competition.user.name, user_path(competition.user) %>
+        </td>
+        <td>
+        <%= link_to competition_path(competition), class: "btn-link" do %>
+           <%= competition.name %>
+        <% end %>
+        </td>
+     </tr>
+       <% end %>
+    　
+    </table>
+    
+    </div>
+    <div class="col-xs-2">
+        
+    </div>
+</div>

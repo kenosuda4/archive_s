@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ユーザー</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% users.each do |user| %>
+    <% if admin_signed_in? %>
+        <tr>
+            <td>
+                <%= link_to admin_user_path(user.id) do %>
+                    <%= user.name %>
+                <% end %>
+            </td>
+        </tr>
+    <% else %>
+        <tr>
+            <td>
+                <%= link_to user_path(user.id) do %>
+                    <%= user.name %>
+                <% end %>
+            </td>
+        </tr>
+    <% end %>
+  <% end %>
+
+  </tbody>
+ </table>

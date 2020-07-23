@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row no1">
+        <div class="col-xs-12 col-md-6">
+            <h2>大会詳細</h2>
+            <table>
+                <tr>
+                    <th>大会名:</th>
+                    <td><%= @competition.name %></td>
+                </tr>
+                <tr>
+                    <th> ユーザー:</th>
+                    <td><%= link_to @competition.user.name, user_path(@competition.user.id) %></td>
+                </tr>
+                <tr>
+                    <th>ステータス:</th>
+                    <%if @competition.is_valid == true %>
+                    <td> 公開 </td>
+                    <% else %>
+                    <td> 非公開 </td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <th>内容</th>
+                </tr>
+                <tr>
+                    <td><%= @competition.summary.html_safe %></td>
+                <tr>
+                <% if user_signed_in? %>
+                    <% if current_user.id == @user.id %>
+                        <tr>
+                            <td><%= link_to "編集", edit_competition_path(@competition) %></td>
+                        </tr>
+                        <tr>
+                            <td> <%= link_to "Destroy", competition_path(@competition.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%></td>
+                        </tr>
+                    <% end %>
+                <% else %>
+                <% end %>  
+            </table><br />
+
+            <% if user_signed_in? %>
+                <% if current_user.id == @user.id %>
+                <h3>記録追加</h3>
+                <p>※全て入力必須</p>
+                    <%= form_for @record, url: records_path, method: :post, class: "form-control" do |f| %>
+                    
+                        <%= f.hidden_field :competition_id,:value => @competition.id,class:"form-control" %>
+                
+                        <%= f.label :種目 %><br>
+                        <%= f.collection_select :athletic_event_id, AthleticEvent.all, :id, :name %><br>
+    
+                        <%= f.label :選手名 %>
+                        <%= f.text_area :name, class:"form-control" %>
+        
+                        <%= f.label :記録 %>
+                        <%= f.text_area :time, class:"form-control"%>
+       
+                        <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+                    <% end %>
+                <% end %>
+                <% else %>
+            <% end %> 
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <h2>記録一覧</h2>
+                <div class="record-main">
+                    <table class="table table-striped">
+                        <tr>
+                            <thead>
+                                <th>種目</th>
+                                <th>選手名</th>
+                                <th>記録</th>
+                            </thead>
+                        </tr>
+                    <% @records.each do |record| %>
+                        <tr>
+                            <td>
+                                <%= record.athletic_event.name %>
+                            </td>
+                            <td>
+                                <%= link_to record.name, record_path(record) %>
+                            </td>
+                            <td>
+                                <%= record.time %>
+                            </td>
+                        </tr>
+                    <% end %>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>

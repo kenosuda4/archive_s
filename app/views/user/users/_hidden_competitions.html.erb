@@ -1,0 +1,8 @@
+<% @h_competitions.each do |competition| %>
+    <tr>
+       <td>
+          <%= link_to competition.name, competition_path(competition) %>
+       </td>
+    </tr>
+<% end %>
+<%= paginate @competitions, :param_name => 'competition' %>

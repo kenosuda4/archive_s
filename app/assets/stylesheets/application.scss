@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+//  bootstrap導入
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+//  summernote導入
+ @import "summernote-bs4";
+//  @import "summernote-custom-theme.min";
+//  いいねボタン用
+@import "font-awesome";
+
+
+
+html {
+    min-height: 100%;
+    position: relative;
+  }
+   
+  body {
+    margin-bottom: 70px;
+  }
+
+header {
+  background-color: #000033;      
+}
+
+footer {
+  background-color: #000033; 
+  height: 70px;  
+  width:100%;
+  padding: 10px 0;          
+  bottom: 0;
+  position: absolute;    
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+.no1 {
+    padding: 65px 0;
+}
+
+.user-name {
+  color: #fff;
+}
+
+
+// .top-content {
+//     background: linear-gradient( #1F1C2C,#fff,#928dab, #1F1C2C);
+// }

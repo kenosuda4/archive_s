@@ -1,0 +1,37 @@
+<div class="container">
+<div class="row no1">
+        <div class="col-lg-3 col-xs-offset-3 col-xs-6 col-xs-offset-3">
+        <% if @menu.image? %>
+
+        <%=  link_to @menu.image.url, 'data-lightbox': @menu.image do %>
+            <%= image_tag @menu.image.thumb.url %>
+        <% end %>
+
+        <% else %>
+            <%= image_tag @menu.image.thumb.url %>
+        <% end %>
+        
+        </div>
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            ユーザー<br>
+            <%= link_to admin_user_path(@menu.user), class: "btn-link" do %>
+                <%= @menu.user.name %><br>
+            <% end %>
+            メニュー名<br>
+            <%= @menu.name %><br>
+
+            内容
+            <%= @menu.content.html_safe %>
+            
+            合計距離
+            <%= @menu.total_distance %>m<br>
+        
+            <%= link_to "編集", edit_admin_menu_path(@menu) %>
+            <%= link_to "Destroy", admin_menu_path(@menu.id), method: :delete,  "data-confirm" => "本当に削除しますか？"  ,class:"btn-sm btn-danger destroy_menu_10349"%>
+
+        </div>
+</div>
+</div>
