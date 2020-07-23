@@ -1,6 +1,6 @@
 <div class="container">
-<div class="row no1">
-    <div class="col-xs-12s col-md-3">      
+   <div class="row no1">
+      <div class="col-xs-12s col-md-3">      
         <h2>User info</h2>
             <label>User name: </label>
             <%= @user.name %><br>
@@ -50,79 +50,46 @@
                </tr>
                <% end %>
                <%= paginate @competitions, :param_name => 'competition' %>
-               <% else %>
-               <% @h_competitions.each do |competition| %>
-               <tr>
-                  <td>
-                     <%= link_to competition.name, competition_path(competition) %>
-                  </td>
-               </tr>
-               <% end %>
-               <%= paginate @competitions, :param_name => 'competition' %>
+            <% else %>
+               <%= render 'user/users/hidden_competitions', competitions: @competitions %>
             <% end %>
          <% else %>
-            <% @h_competitions.each do |competition| %>
-            <tr>
-               <td>
-                  <%= link_to competition.name, competition_path(competition) %>
-               </td>
-            </tr>
-            <% end %>
-            <%= paginate @competitions, :param_name => 'competition' %>
+            <%= render 'user/users/hidden_competitions', competitions: @competitions %>
          <% end %>
 
         </table>
-    </div>
+      </div>
 
-    <div class="col-xs-12 col-md-9">
-    <h2>menu</h2>
+      <div class="col-xs-12 col-md-9">
+         <h2>menu</h2>
    
-    <table class="table table-striped">
-    　<tr>
-       <thead>
-           <th>メニュー</th>
-           <th>距離</th>
-       </thead>
-     </tr>
-     <tr>
-     <% if user_signed_in? %>
-      <% if current_user.id == @user.id %>
-       <% @menus.each do |menu| %>
-        <td>
-           <%= link_to menu.name, menu_path(menu) %>
-        </td>
-        <td>
-           <%= menu.total_distance %>m
-        </td>
-      </tr>
-       <% end %>
-       <%= paginate @menus, :param_name => 'menu' %>
-      <% else %>
-         <% @h_menus.each do |menu| %>
-            <td>
-               <%= link_to menu.name, menu_path(menu) %>
-            </td>
-            <td>
-               <%= menu.total_distance %>m
-            </td>
-      </tr>
-        <% end %>
-        <%= paginate @h_menus, :param_name => 'menu' %>
-      <% end %>
-      <% else %>
-      <% @h_menus.each do |menu| %>
-         <td>
-            <%= link_to menu.name, menu_path(menu) %>
-         </td>
-         <td>
-            <%= menu.total_distance %>m
-         </td>
-   </tr>
-     <% end %>
-     <%= paginate @h_menus, :param_name => 'menu' %>
-   <% end %>
-    　
-    </table>
+         <table class="table table-striped">
+            <tr>
+               <thead>
+                  <th>メニュー</th>
+                  <th>距離</th>
+               </thead>
+            </tr>
+            <% if user_signed_in? %>
+                  <% if current_user.id == @user.id %>
+                     <% @menus.each do |menu| %>
+                        <tr>
+                           <td>
+                              <%= link_to menu.name, menu_path(menu) %>
+                           </td>
+                           <td>
+                              <%= menu.total_distance %>m
+                           </td>
+                        </tr>
+                     <% end %>
+                     <%= paginate @menus, :param_name => 'menu' %>
+                  <% else %>
+                     <%= render 'user/users/hidden_menus', menus: @menus %>
+                  <% end %>
+            <% else %>
+               <%= render 'user/users/hidden_menus', menus: @menus %>
+            <% end %>
+    　   </table>
     <!--トータル距離のグラフ-->
     <%= line_chart @user.menus.all.pluck(:created_at,:total_distance), max: 12000,title: "total distance" %>
     <!--x軸y軸の設定はpluck(:x軸,：y軸)でいけるy-->
