@@ -1,0 +1,11 @@
+<% @h_menus.each do |menu| %>
+    <tr>
+       <td>
+          <%= link_to menu.name, menu_path(menu) %>
+       </td>
+       <td>
+          <%= menu.total_distance %>m
+       </td>
+    </tr>
+ <% end %>
+ <%= paginate @h_menus, :param_name => 'menu' %>
