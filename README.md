@@ -37,7 +37,8 @@
 大会記録の管理
 
 ## 設計書
-https://drive.google.com/file/d/1jsGkmolZI7ptj1woc4rSDi-QtOqd00eH/view?usp=sharing
+er図  
+https://drive.google.com/file/d/10_1ICXX3u9fdxNxC0gXFmqCLzMIAKnxd/view?usp=sharing
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1a2_gdlJOAmjeKsuBNldaIFc3XP90_73EUEjmzU69-6o/edit#gid=1255680757
