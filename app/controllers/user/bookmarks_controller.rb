@@ -19,10 +19,9 @@ class User::BookmarksController < ApplicationController
         bookmark.destroy
     end
 
-    private
+private
     def set_bookmark
         @menu = Menu.find(params[:menu_id])
     end
-
 
 end
