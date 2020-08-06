@@ -58,7 +58,7 @@ class User::RapsController < ApplicationController
     rap = Rap.find(params[:id])
     user = rap.user
     if current_user != user
-      redirect_to competitions_path
+      redirect_to root_path
     end
   end
 

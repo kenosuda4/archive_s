@@ -1,17 +1,19 @@
 <div class="container">
     <div class="row no1">
         <div class="col-xs-6">
+        <h2>大会編集</h2>
+        <p>※マークがある項目は必須項目です</p>
         <%= form_for @competition, class: "form-control" do |f| %>
 
-           <%= f.label :大会名 %>
+           <%= f.label :※大会名 %>
            <p><%= f.text_area :name %></p>
 
             <%= f.label :概要 %>
-            <%= f.text_area :summary, 'data-provider': :summernote %>
+            <%= f.text_area :summary, 'data-provider': :summernote, class:"summernote" %><br>
 
-            <%= f.label :ジャンル %>
+            <%= f.label :※ジャンル %>
             <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-
+            ※ステータス
             <%= f.label :公開 %>
             <%= f.radio_button :is_valid, true %>
             <%= f.label :非公開　%>
@@ -23,3 +25,18 @@
         </div>
     </div>
 </div>
+<script>
+$('.summernote').summernote({
+  height: 300,
+  toolbar: [
+    ['style', ['style']],
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['link']],
+    ['table', ['table']],
+  ]
+})
+</script>

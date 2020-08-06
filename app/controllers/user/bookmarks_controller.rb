@@ -4,7 +4,7 @@ class User::BookmarksController < ApplicationController
     
     def index
         @menus = Menu.all
-        @bookmarks = current_user.bookmarks_menus.includes(:user).page(params[:page]).per(5).reverse_order
+        @bookmarks = current_user.bookmarks_menus.includes(:user).page(params[:page]).reverse_order
     end
 
     def create
@@ -19,10 +19,9 @@ class User::BookmarksController < ApplicationController
         bookmark.destroy
     end
 
-    private
+private
     def set_bookmark
         @menu = Menu.find(params[:menu_id])
     end
-
 
 end

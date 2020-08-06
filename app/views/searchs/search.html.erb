@@ -5,11 +5,11 @@
       </div>
       <div class="col-xs-9">
       <% if @model == 'user' %>
-      <h3>Users search for '<%= @content %>'</h3>
-      <%= render 'user/users/index', users: @detas %>
+        <h3>ユーザー検索 '<%= @content %>'</h3>
+          <%= render 'user/users/index', users: @detas %>
       <% else @model == 'menu' %>
-      <h3>Menus search for '<%= @content %>'</h3>
-        <%= render 'user/menus/index', menus: @detas %>
+        <h3>メニュー検索 '<%= @content %>'</h3>
+          <%= render 'user/menus/index', menus: @detas %>
       <% end %>
       </div>
     </div>

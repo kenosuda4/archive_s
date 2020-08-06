@@ -7,7 +7,7 @@ class Admin::RecordsController < ApplicationController
     @competition = @record.competition
     @athletic_event = @record.athletic_event
     @user = @record.user
-    @raps = @record.raps.all 
+    @raps = @record.raps.all
   end
 
   def edit
@@ -40,6 +40,5 @@ class Admin::RecordsController < ApplicationController
   def set_record
     @record = Record.find(params[:id])
   end
-
 
 end

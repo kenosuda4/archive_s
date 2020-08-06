@@ -22,7 +22,15 @@
         <h2>informations</h2>
         <% @informations.each do |information| %>
             <table class="info-table">
-                <%= link_to information.title, admin_information_path(information) %>
+                <tr>
+                    <th><%= link_to information.title, admin_information_path(information) %>: </th>
+               
+                    <%if information.is_valid == true %>
+                        <th> 公開 </th>
+                    <% else %>
+                        <th> 非公開 </th>
+                    <% end %>
+                </tr>
             </table>
         <% end %>
         

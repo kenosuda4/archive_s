@@ -26,6 +26,14 @@ class User::UsersController < ApplicationController
     end
   end 
 
+  def quit
+    @user = current_user
+    @user.update(is_deleted: true)
+    #update後にログアウトしたい。
+    sign_out @user
+    redirect_to root_path
+  end
+
   private
 
   def user_params
@@ -40,7 +48,7 @@ class User::UsersController < ApplicationController
   def correct_user
     user = User.find(params[:id])
     if current_user != user
-      redirect_to users_path
+      redirect_to root_path
     end
   end
 

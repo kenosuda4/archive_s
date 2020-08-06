@@ -10,7 +10,7 @@
             <%= f.text_area :name %><br>
 
             <%= f.label :introduction %>
-            <%= f.text_area :introduction, 'data-provider': :summernote %>
+            <%= f.text_area :introduction, 'data-provider': :summernote, class:"summernote" %><br>
 
             <p>会員ステータス</p>
             <%= f.label :在籍会員 %>
@@ -24,3 +24,19 @@
     </div>
 </div>
 </div>
+
+<script>
+$('.summernote').summernote({
+  height: 300,
+  toolbar: [
+    ['style', ['style']],
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    ['insert', ['link']],
+    ['table', ['table']],
+  ]
+})
+</script>

@@ -1,10 +1,10 @@
-# archive.S
+# Archive.S
+  
 トレーニングメニューはどのスポーツにおいても財産といって過言ではないと私は考えています。  
 多くの先人たちが残してくれたメニューを元に、修正・発展させながら
 新たなメニューを考案し、次代に引継ぐ。  
-そのメニューを記録・保存し続けられる環境があれば...  
-その考えを元にarchive.Sという命名をしました。  
-ただの複数形にせず、.SとしたのはSwimの意味も込めて
+そのメニューを簡単に記録・保存し続けられる環境があれば...  
+その考えを元に、Archive.Sという命名をしました。  
 
 ## サイト概要
 主に水泳の練習メニューの投稿、管理(画像・文章にて)  
@@ -31,13 +31,14 @@
 
 
 ### 主な利用シーン
-練習メニュー作成後の管理
-練習メニュー作成の参考に
+練習メニュー作成・管理  
+練習メニュー作成の参考    
 
 大会記録の管理
 
 ## 設計書
-https://drive.google.com/file/d/1jsGkmolZI7ptj1woc4rSDi-QtOqd00eH/view?usp=sharing
+er図  
+https://drive.google.com/file/d/10_1ICXX3u9fdxNxC0gXFmqCLzMIAKnxd/view?usp=sharing
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1a2_gdlJOAmjeKsuBNldaIFc3XP90_73EUEjmzU69-6o/edit#gid=1255680757

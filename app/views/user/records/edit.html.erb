@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row no1">
     <div class="col-offset-xs-3 col-xs-6">
-        <h3>編集</h3>
+        <h3>記録編集</h3>
             <%= form_for @record, url: record_path, method: :patch, class: "form-control" do |f| %>
                     
                 <%= f.hidden_field :competition_id,:value => @competition.id,class:"form-control" %>
@@ -17,6 +17,7 @@
        
                     <%= f.submit "編集", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
                 <% end %>
+                <p>※全項目必須</p>
     </div>
 </div>
 </div>

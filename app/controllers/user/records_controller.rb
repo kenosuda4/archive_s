@@ -59,7 +59,7 @@ class User::RecordsController < ApplicationController
     record = Record.find(params[:id])
     user = record.user
     if current_user != user
-      redirect_to competitions_path
+      redirect_to root_path
     end
   end
 

@@ -1,37 +1,40 @@
 <div class="container">
 <div class="row no1">
-    <div class="col-offset-xs-1 col-xs-10 col-offset-xs-1 col-lg-3">
+    <div class="col-lg-3 col-offset-xs-1 col-xs-10 col-offset-xs-1">
         <% if user_signed_in? %>
             <% if current_user.id == @user.id %>
             <h3>ラップタイム追加</h3>
             <%= form_for @rap, class: "form-control" do |f| %>
         
                 <%= f.hidden_field :record_id,:value => @record.id,class:"form-control" %>
-                <%= f.label :距離 %>
+                <%= f.label :距離 %><p>※数字のみ入力</p>
                 <%= f.number_field :distance, class:"form-control"%>
 
-                <%= f.label :ラップタイム %>
+                <%= f.label :ラップタイム %><p>※小数点第2位まで(30.22)入力</p>
                 <%= f.number_field :rap_time, step: '0.01', class:"form-control"%>
 
                 <%= f.submit "投稿", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
             <% end %>
+            ※25or50m毎のラップタイム入力を推奨
             <% end %>
         <% else %>
         <% end %> 
     </div>
-    <div class="col-offset-xs-1 col-xs-10 col-offset-xs-1 col-lg-5">
+    <div class="col-lg-5 col-xs-12">
         <h3>記録詳細</h3>
         <div class="record-main">
             <table class="table table-striped">
              　<tr>
                 <thead>
-                    <th><%= @record.name %></th>
+                    <th>選手名</th>
+                    <th></th>
                     <th></th>
                     <th></th>
                     <th></th>
                 </thead>
                 </tr>
                 <tr>
+                    <td><%= @record.name %></td>
                     <td><%= @record.athletic_event.name %></td>
                     <td><%= @record.time %></td>
                     <td><%= link_to '編集', edit_record_path(@record) %></td>
@@ -41,12 +44,12 @@
         <%= link_to @record.competition.name, competition_path(@competition) %>に戻る
 
         <!--ラップのグラフ-->
-        <%= line_chart @record.raps.all.pluck(:created_at,:rap_time), max: 60,title: "rap time" %>
+        <%= line_chart @record.raps.all.pluck(:distance,:rap_time), max: 60,title: "rap time" %>
         <!--x軸y軸の設定はpluck(:x軸,：y軸)でいけるy-->
         
         </div>  
     </div>
-    <div class="col-offset-xs-1 col-xs-10 col-offset-xs-1 col-lg-4">
+    <div class="col-lg-4 col-xs-12">
         
         <table class="table table-striped">
     　      <tr>
