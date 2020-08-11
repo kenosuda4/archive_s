@@ -12,13 +12,18 @@
       position: relative;
   
 }
-.info-box{
+.info-box {
     color: #fff;
     padding-top: 170px
 }  
 
-.top-image{
+.top-image-box {
     margin: auto;
+}
+.top-image {
+    margin: auto;
+    width: 620px;
+    height: 440px;
 }
 
 .top-message {
@@ -28,9 +33,7 @@
 
 .top-content {
     padding: 20px;            
-    width: max;
-    
-       
+    width: max; 
 }
 
 .top-content1 {
@@ -41,7 +44,6 @@
 }
 
 .top-h1 {
-    
     color: #fff;
 }
 .top-h3 {
@@ -53,3 +55,9 @@
   color: #fff;
 }
 
+@media (max-width: 575.98px) {
+	.top-image {
+        height: 176px;
+		width: 248px; 
+	}
+}
