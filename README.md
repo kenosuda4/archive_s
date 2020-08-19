@@ -36,6 +36,29 @@
 
 大会記録の管理
 
+## 使用技術
+言語
+  Ruby
+  Javascript
+フレームワーク  
+  RubyOnRails  
+
+環境  
+Vagrant
+AWS (EC2/EIP/RDS/S3)
+MySQL (5.5.62)
+
+ライブラリ  
+css  
+ Bootstrap  
+ kaminari  
+JavaScript  
+ JQuery  
+ carrierwave  
+ chartkick  
+ lightbox2  
+ summernote  
+
 ## 設計書
 er図  
 https://drive.google.com/file/d/10_1ICXX3u9fdxNxC0gXFmqCLzMIAKnxd/view?usp=sharing
