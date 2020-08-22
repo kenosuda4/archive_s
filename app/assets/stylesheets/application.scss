@@ -60,9 +60,13 @@ footer {
   color: #fff;
 }
 @media (max-width: 575.98px) {
+  // ロゴ
+  .top-h1{
+    padding-right:5px;
+  }
 	// ハンバーガーメニュー
   #hm-icon{
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 20px;
     z-index: 10;
@@ -129,9 +133,13 @@ footer {
     text-decoration: none;
     font-weight: bold;
   }
-  .search-form {
-    width: 80%;
+  .header-search{
+    margin: 0 auto;
   }
+  .search-form{
+    color: #000;
+  }
+
 }
 
 

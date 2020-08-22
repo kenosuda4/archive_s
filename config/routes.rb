@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'homes#top'
   get 'homes/invalid' => 'homes#invalid'
+  get 'homes/about' => 'homes#about'
 
   #devise admin
   devise_for :admins, controllers: {
