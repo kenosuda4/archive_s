@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>ユーザー</th>
+      <th>メニュー数</th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,9 @@
                     <%= user.name %>
                 <% end %>
             </td>
+            <td>
+                <%= user.menus.count %>
+            </td>
         </tr>
     <% else %>
         <tr>
@@ -21,6 +25,9 @@
                 <%= link_to user_path(user.id) do %>
                     <%= user.name %>
                 <% end %>
+            </td>
+            <td>
+                <%= user.menus.count %>
             </td>
         </tr>
     <% end %>

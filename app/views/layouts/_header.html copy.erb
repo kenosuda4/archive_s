@@ -1,0 +1,59 @@
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-3" style="height:85px;">
+        <nav class="nav navbar-nav navbar-left">
+          <span class="header-logo">
+            <%= link_to root_path do %>
+              <h1 class="top-h1">Archive.S</h1>
+            <% end %>
+          </span>
+        </nav>
+      </div>
+      <div class="col-xs-9" style="height:85px;">
+        <nav class="clearfix" style="line-height: 15px;font-size: 15px;">
+          <div id="h-menu">
+            <p>menu</p>
+              <nav class="clearfix" style="line-height: 15px;font-size: 15px;">
+                <ul class="nav navbar-nav navbar-right header-navi">
+                  <% if admin_signed_in? %>
+                    <%= render 'layouts/header_admin' %>
+                  <% elsif user_signed_in? %>
+                    <%= render 'layouts/header_user' %>
+                  <% else %>
+                    <%= render 'layouts/header_nonlogin' %>
+                  <% end %>
+                </ul>
+              </nav>
+          </div>
+          <div id="hm-icon">
+            <a class="menu-trigger" href="#">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+          </div>
+          <div class="input-group header-search">
+            <div class="search-form">
+              <%= form_tag(search_path, method: :get) do %>
+               <%= text_field_tag 'search[content]' %>
+                <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Menu" => "menu" }) %>
+                <%= select_tag 'search[how]', options_for_select({ "完全一致" => "match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical"  }) %>
+                <%= submit_tag '検索', class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+$(function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
+</script

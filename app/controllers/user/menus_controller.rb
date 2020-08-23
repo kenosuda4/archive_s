@@ -19,8 +19,8 @@ class User::MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     @menu.user_id = current_user.id
-     if @menu.save
-       redirect_to menu_path(@menu)
+    if @menu.save
+      redirect_to menu_path(@menu)
     else
       render 'new'
     end
@@ -35,7 +35,7 @@ class User::MenusController < ApplicationController
 
   def update
     if @menu.update(menu_params)
-       redirect_to menu_path(@menu)
+      redirect_to menu_path(@menu)
     else
       render 'edit'
     end
@@ -43,7 +43,7 @@ class User::MenusController < ApplicationController
 
   def destroy
     if @menu.destroy
-       redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
       render 'show'
     end

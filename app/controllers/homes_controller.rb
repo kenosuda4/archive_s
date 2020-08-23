@@ -6,6 +6,9 @@ class HomesController < ApplicationController
     @informations = Information.where(is_valid: true).order(created_at: :desc).limit(4)
   end
 
+  def about
+  end
+
   #ゲストユーザー用 sessions_controllerに変更
   # def new_guest
   #   user = User.find_or_create_by!(email: 'guest@example.com') do |user|
