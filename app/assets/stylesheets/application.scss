@@ -62,7 +62,10 @@ footer {
 @media (max-width: 575.98px) {
   // ロゴ
   .top-h1{
-    padding-right:5px;
+    position: absolute;
+    left: 5px;
+    margin: 15px auto;
+
   }
 	// ハンバーガーメニュー
   #hm-icon{
