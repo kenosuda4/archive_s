@@ -1,31 +1,35 @@
 <div class="container">
    <div class="row">
-      <div class="col-lg-offset-2 col-lg-8 col-xs-12">
+      <div class="col-lg-offset-2 col-lg-6 col-xs-12">
          <div class="top-about">
-            <div class="about-content1">
-               <h4 class="top-h4">利用方法① メニュー管理</h4>
-               メニューの画像(スクリーンショットなど)か内容とトータル距離を入力して保存。<br>
-               トータル距離を元に自動でグラフが作成され、1回1回の練習の距離をグラフで把握できます。<br />
-               また、他のユーザーのメニューをブックマークすることもできます
-               <br /><br />
-               <p>※イメージ画像 メニュー管理</p>
-               <div class="top-about">
-                  <%= image_tag asset_path('menu.png'), :size =>'620x440' %><br /><br />
+            <div class="about-content">
+                <div class="about-content1">
+                  <h4 class="top-h4">利用方法① メニュー管理</h4>
+                  メニューの画像(スクリーンショットなど)か内容とトータル距離を入力して保存。<br>
+                  トータル距離を元に自動でグラフが作成され、1回1回の練習の距離をグラフで把握できます。<br />
+                  また、他のユーザーのメニューをブックマークすることもできます
+                </div>
+                <br /><br />
+                <p>※イメージ画像 メニュー管理</p>
+                <div class="about-image-box">
+                  <%= image_tag asset_path('menu.png'), class:"about-image" %><br /><br />
                   
-                  <%= image_tag asset_path('graph.png'), :size =>'620x440' %>
-               </div>
-               <br /><br />
-               <h4 class="top-h4">利用方法② 大会記録管理</h4>
-               出場した大会を登録<br />
-               その後出場者名と種目、記録を入力して保存<br />
-               登録された記録に対し、ラップタイムを入力すればラップタイムの変遷を<br />
-               グラフで表示できます。<br /><br />
-               <p>※イメージ画像 大会記録管理</p>
-               <div class="top-image">
-                  <%= image_tag asset_path('competition.png'), :size =>'620x330' %><br /><br />
+                  <%= image_tag asset_path('graph.png'), class:"about-image"  %>
+                </div>
+                <br /><br />
+                <div class="about-content1">
+                  <h4 class="top-h4">利用方法② 大会記録管理</h4>
+                  出場した大会を登録<br />
+                  その後出場者名と種目、記録を入力して保存<br />
+                  登録された記録に対し、ラップタイムを入力すればラップタイムの変遷を<br />
+                  グラフで表示できます。
+                </div><br /><br />
+                <p>※イメージ画像 大会記録管理</p>
+                <div class="about-image-box">
+                  <%= image_tag asset_path('competition.png'), class:"about-image"  %><br /><br />
                   
-                  <%= image_tag asset_path('record.png'), :size =>'620x340' %>
-               </div>
+                  <%= image_tag asset_path('record.png'), class:"about-image" %>
+                </div>
             </div>
          </div>
       </div>

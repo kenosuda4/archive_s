@@ -9,9 +9,9 @@
             水泳・オープンウォーター・トライアスロンなどの競技者・指導者向けに<br>
             そんなサービスを提供できることを目指し、このサイトを作成しました<br />
             
-            ゲストユーザー機能がありますので、是非お試しください。<br />
-            ※右上ヘッダー
-
+            <p class="guest">ゲストユーザー機能がありますので、是非お試しください。<br />※メニュー内</p>
+         </div>
+         <div class=infobox>
             <% if admin_signed_in? %>
             <div class="count-box">
                <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
