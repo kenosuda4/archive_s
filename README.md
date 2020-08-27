@@ -43,6 +43,7 @@ Archive.Sというアプリケーション名は、その名の通り記録保�
   -devise(ログイン機能)
   -rubocop-airbnb(静的解析)
 
+
 ### ターゲットユーザ
 水泳競技のコーチ、水泳競技者
 (オープンウォーター、トライアスロンも含む)
@@ -54,5 +55,3 @@ https://drive.google.com/file/d/10_1ICXX3u9fdxNxC0gXFmqCLzMIAKnxd/view?usp=shari
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1a2_gdlJOAmjeKsuBNldaIFc3XP90_73EUEjmzU69-6o/edit#gid=1255680757
-
-

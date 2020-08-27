@@ -3,7 +3,10 @@ class HomesController < ApplicationController
     @users = User.all
     @menus = Menu.all
     @competitions = Competition.all
-    @informations = Information.where(is_valid: true).order(created_at: :desc).limit(4)
+    @informations = Information.where(is_valid: true).order(created_at: :desc).limit(2)
+  end
+
+  def about
   end
 
   #ゲストユーザー用 sessions_controllerに変更

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//topページ 
 .top-main {
     padding: 30px 0;
       height: 650px;
@@ -17,31 +18,7 @@
     padding-top: 170px
 }  
 
-.top-image{
-    margin: auto;
-}
-
-.top-message {
-    color: #fff;
-    padding-left: 70px;
-}
-
-.top-content {
-    padding: 20px;            
-    width: max;
-    
-       
-}
-
-.top-content1 {
-    margin: 0 45px;
-}
-.top-content2 {
-    margin: 0 45px;
-}
-
 .top-h1 {
-    
     color: #fff;
 }
 .top-h3 {
@@ -52,4 +29,55 @@
   padding-top: 80px;
   color: #fff;
 }
+.guest {
+    color: rgb(238, 195, 102);
+}
 
+.top-message {
+    color: #fff;
+    padding-left: 70px;
+}
+
+.about-content {
+    padding: 20px 0;            
+    width: max;
+    margin: 0 auto;
+       
+}
+// aboutページ
+
+.about-content1 {
+
+    margin: auto;
+    width: 90%;
+}
+.about-image {
+    margin: auto;
+    height: 440px;
+    width: 660px;
+}
+
+
+@media (max-width: 575.98px) {
+    .top-message {
+        margin: 0 auto;
+        color: #fff;
+        padding: 0;
+    }
+    .info-box {
+        margin: 0 auto;
+    }
+    .top-content1 {
+        margin: 0 auto;
+    }
+    .about-image-box {
+        width: 90%;
+        margin: 0 auto;
+        
+    }
+
+	.about-image {
+        height: 176px;
+		width: 230px; 
+	}
+}
