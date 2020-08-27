@@ -22,14 +22,14 @@ Archive.Sというアプリケーション名は、その名の通り記録保�
 - 使用言語・フレームワーク
   - Ruby(2.5.7)
   - RubyOnRails(5.2.4.3)
-  - JavaScript  
+  - JavaScript
 
 - 環境
- - vagrant
- - AWS(EC2/EIP/RDS/S3)
- - puma
- - nginx
- - MySQL(5.5.62)  
+  - vagrant
+  - AWS(EC2/EIP/RDS/S3)
+  - puma
+  - nginx
+  - MySQL(5.5.62)  
 
 - ライブラリ
  - CSS
@@ -41,7 +41,7 @@ Archive.Sというアプリケーション名は、その名の通り記録保�
   - summernote(リッチテキストエディタ)
   - carrierwave(画像投稿)
   - lightbox2(画像拡大)  
-  
+
  - その他
   - kaminari(ページネーション)
   - devise(ログイン機能)
