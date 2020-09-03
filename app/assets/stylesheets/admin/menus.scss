@@ -1,3 +1,15 @@
 // Place all the styles related to the Admin::Menus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.menu-content {
+    padding-top: 40px;
+}
+
+
+@media (max-width: 575.98px) {
+    // ロゴ
+    .photo{
+      width: 80%;
+      margin: 0 30px 0;
+    }
+}

@@ -39,12 +39,19 @@ header {
 
 footer {
   background-color: #000033; 
-  height: 70px;  
+  height: 77px;  
   width:100%;
   padding: 10px 0;          
   bottom: 0;
   position: absolute;    
 }
+.f-link {
+  color: #fff;
+}
+.f-content {
+  
+}
+
 
 .clearfix::after {
     content: "";

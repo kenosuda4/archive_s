@@ -1,11 +1,13 @@
 <div class="container">
 <div class="row no1">
-        <div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
-                <h3>メニュー 一覧</h3>
+        <div class="col-lg-offset-1 col-lg-10 col-lg-offset-1">
+                <h3>メニュー・一覧</h3>
                 <table class="table">
                         <tr>
                                 <th>ユーザー</th>
-                                <th>メニュー</th>
+                                <th>メニュータイトル</th>
+                                <th>距離</th>
+                                <th>競技</th>
                         </tr>
                         <% @menus.each do |menu| %>
                         <tr>
@@ -13,11 +15,16 @@
                                         <%= menu.user.name %>
                                 </td>
                                 <td>
-                                    <%= link_to menu_path(menu), class: "btn-link" do %>
-                                        <strong><%= menu.name %></strong>
-                                    <% end %>
+                                   <%= link_to menu_path(menu), class: "btn-link" do %>
+                                     <strong><%= menu.name %></strong>
+                                   <% end %>
                                 </td>
-        
+                                <td>
+                                   <%= menu.total_distance %>
+                                </td>
+                                <td>
+                                   <%= menu.genre.name %> 
+                                </td>
                         </tr>
                          <% end %>
                          <%= paginate @menus %>

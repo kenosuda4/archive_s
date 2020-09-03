@@ -33,6 +33,8 @@ class User::RecordsController < ApplicationController
     if @record.update(record_params)
       redirect_to record_path(@record)
     else
+      @user = current_user
+      @competition = @record.competition
       render 'edit'
     end
   end

@@ -13,24 +13,21 @@
          </div>
          <div class=infobox>
             <% if admin_signed_in? %>
-            <div class="count-box">
-               <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
-               <p>登録メニュー数<%= link_to @menus.count, admin_menus_path, :style=>"color:yellow;" %>件<p>
-               <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
-            </div>
+              <div class="count-box">
+                 <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
+                 <p>登録メニュー数<%= link_to @menus.count, admin_menus_path, :style=>"color:yellow;" %>件<p>
+                 <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
+              </div>
             <% else %>
-            <div class="info-box">
-            <h4>お知らせ</h4>
-            <% @informations.each do |information| %>
-                  <%= information.title %><br>
-                  <p><%= information.info_content %></p>
-               <% end %>
-            </div>
+              <div class="info-box">
+              <h4>お知らせ</h4>
+              <% @informations.each do |information| %>
+                    <%= information.title %><br>
+                    <p><%= information.info_content %></p>
+                 <% end %>
+              </div>
             <% end %>
          </div>
-      </div>
-      <div class="col-lg-3">
-         
       </div>
    </div>
 </div>
