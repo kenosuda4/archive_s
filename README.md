@@ -37,7 +37,7 @@ Archive.Sというアプリケーション名は、その名の通り記録・�
     - bootstrap(CSSフレームワーク)  
 
   - JavaScript
-    - JQuery
+    - jQuery
     - chartkick(チャート機能)
     - summernote(リッチテキストエディタ)
     - carrierwave(画像投稿)
