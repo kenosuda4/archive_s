@@ -38,6 +38,7 @@
         　<tr>
            <thead>
                <th>大会一覧</th>
+               <th>ジャンル</th>
            </thead>
          </tr>
          <% if user_signed_in? %>
@@ -47,6 +48,9 @@
                   <td>
                      <%= link_to competition.name, competition_path(competition) %>
                   </td>  
+                  <td>
+                     <%= competition.genre.name %>
+                  </td>
                </tr>
                <% end %>
                <%= paginate @competitions, :param_name => 'competition' %>
@@ -68,6 +72,7 @@
                <thead>
                   <th>メニュー</th>
                   <th>距離</th>
+                  <th>ジャンル</th>
                </thead>
             </tr>
             <% if user_signed_in? %>
@@ -79,6 +84,9 @@
                            </td>
                            <td>
                               <%= menu.total_distance %>m
+                           </td>
+                           <td>
+                              <%= menu.genre.name %>
                            </td>
                         </tr>
                      <% end %>
