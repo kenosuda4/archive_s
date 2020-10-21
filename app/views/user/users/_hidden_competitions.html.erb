@@ -3,6 +3,9 @@
        <td>
           <%= link_to competition.name, competition_path(competition) %>
        </td>
+       <td>
+          <%= competition.genre.name%>
+       </td>
     </tr>
 <% end %>
 <%= paginate @competitions, :param_name => 'competition' %>
