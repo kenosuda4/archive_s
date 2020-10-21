@@ -6,6 +6,9 @@
        <td>
           <%= menu.total_distance %>m
        </td>
+       <td>
+         <%= menu.genre.name %>
+       </td>
     </tr>
  <% end %>
  <%= paginate @h_menus, :param_name => 'menu' %>
