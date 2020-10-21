@@ -4,6 +4,7 @@ class HomesController < ApplicationController
     @menus = Menu.all
     @competitions = Competition.all
     @informations = Information.where(is_valid: true).order(created_at: :desc).limit(2)
+    @menu_rankings = Menu.find(Bookmark.group(:menu_id).order('count(menu_id) desc').limit(3).pluck(:menu_id))
   end
 
   def about

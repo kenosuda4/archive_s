@@ -15,8 +15,13 @@
 }
 .info-box{
     color: #fff;
-    padding-top: 170px
+    padding-top: 30px
 }  
+
+.ranking-box {
+    padding-top: 80px;
+    color: #fff;
+  }
 
 .top-h1 {
     color: #fff;
@@ -44,6 +49,9 @@
     margin: 0 auto;
        
 }
+.top-menu-rank {
+    color: white;
+}
 // aboutページ
 
 .about-content1 {
@@ -57,8 +65,11 @@
     width: 660px;
 }
 
-
 @media (max-width: 575.98px) {
+
+    .top-main {
+        height: 100%;
+    }
     .top-message {
         margin: 0 auto;
         color: #fff;
@@ -77,7 +88,7 @@
     }
 
 	.about-image {
-        height: 176px;
+        // height: 176px;
 		width: 230px; 
 	}
 }
