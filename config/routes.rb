@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'homes#top'
   get 'homes/invalid' => 'homes#invalid'
   get 'homes/about' => 'homes#about'
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
 
   # 検索
   get '/search' => 'searchs#search', as: 'search' 
+  # ソート機能
+  get '/sorts' => 'sorts#sort', as: 'sort'
 
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
