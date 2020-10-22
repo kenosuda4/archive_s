@@ -1,0 +1,18 @@
+<% @menu.each do |menu| %>
+    <tr>
+            <td>
+                    <%= menu.user.name %>
+            </td>
+            <td>
+               <%= link_to menu_path(menu), class: "btn-link" do %>
+                 <strong><%= menu.name %></strong>
+               <% end %>
+            </td>
+            <td>
+               <%= menu.total_distance %>
+            </td>
+            <td>
+               <%= menu.genre.name %> 
+            </td>
+    </tr>
+<% end %>

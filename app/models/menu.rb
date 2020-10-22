@@ -15,4 +15,16 @@ class Menu < ApplicationRecord
     end
     validates :is_valid, inclusion: {in: [true, false]}
     mount_uploader :image, ImageUploader
+
+    def self.sort(selection)
+        case selection
+        when 'new'
+            return where(is_valid: true).order(created_at: :DESC)
+        when 'old'
+            return where(is_valid: true).order(created_at: :ASC)
+        when 'bookmarks'
+            return find(Bookmark.group(:menu_id).order(Arel.sql('count(menu_id) desc')).pluck(:menu_id))
+
+        end
+    end
 end
