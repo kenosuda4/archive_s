@@ -5,22 +5,31 @@
 //topページ 
 .top-main {
     padding: 30px 0;
-      height: 650px;
-      width: max;
-      background-image: image-url("top-background.jpeg");
-      background-size: cover;
-      background-position: center;
-      position: relative;
-  
+    height: 650px;
+    width: max;
+    background-image: image-url("top-background.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+// .info {
+//     padding:20px 70px;
+// }  
+.top-right-content {
+    background-color:rgba(76, 76, 83, 0.319);
+    background-blend-mode:lighten;
+
 }
 .info-box{
     color: #fff;
-    padding-top: 30px
+    padding-top: 20px;
 }  
 
 .ranking-box {
-    padding-top: 80px;
+    margin-top: 50px;
     color: #fff;
+    font-weight: bold;
   }
 
 .top-h1 {
@@ -71,13 +80,12 @@
         height: 100%;
     }
     .top-message {
+        width: 95%;
         margin: 0 auto;
         color: #fff;
         padding: 0;
     }
-    .info-box {
-        margin: 0 auto;
-    }
+
     .top-content1 {
         margin: 0 auto;
     }
@@ -90,5 +98,27 @@
 	.about-image {
         // height: 176px;
 		width: 230px; 
-	}
+    }
+    .ranking {
+        width: 100%;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .ranking-box {
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .info {
+        width: 100%;
+        position: relative;
+    }
+
+    .info-box {
+        margin: 0 auto;
+        font-weight: bold;
+        text-align: center;
+    }
 }
