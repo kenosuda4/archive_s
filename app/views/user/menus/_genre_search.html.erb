@@ -1,8 +1,8 @@
 <ul class="list-group">
-	<li class="list-group-item list-group-item-warning text-center"><h4>ジャンル検索</h4></li>
+	  <h4>ジャンル検索</h4>
 	  <li class="list-group-item text-center">
 	  <% genres.each do |genre| %>
-         	<h5 class="panel-body">
+         	<h5>
          	<!-- ジャンル検索機能 -->
          	<%= link_to genre.name, genre_search_menus_path(genre_name: "#{genre.name}"), method: :post %>
 		   </h5>

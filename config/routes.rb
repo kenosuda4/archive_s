@@ -45,10 +45,11 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update] do
       delete :quit, on: :member
     end
-    # menu+bookmark
+    # menu+bookmark+genre_search
     resources :menus do
       post 'add' => 'bookmarks#create'
       delete '/add' => 'bookmarks#destroy'
+      # collection → member
       collection do
         post :genre_search
       end

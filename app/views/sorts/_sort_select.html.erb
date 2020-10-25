@@ -1,5 +1,5 @@
 <div class="sort-box">
-    <p>並び替え</p>
+    <h4>並び替え</h4>
     <%= form_with model: menu, url: sort_path, method: :get, local: true do |f| %>
         <%= f.select :keyword, [['新しい順', 'new'], ['投稿が古い順', 'old'],['ブックマークが多い順','bookmarks'],] %>
         <%= f.submit '表示', class: "btn btn-primary" %>
