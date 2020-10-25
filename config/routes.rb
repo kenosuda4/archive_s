@@ -49,6 +49,9 @@ Rails.application.routes.draw do
     resources :menus do
       post 'add' => 'bookmarks#create'
       delete '/add' => 'bookmarks#destroy'
+      collection do
+        post :genre_search
+      end
     end
     resources :bookmarks, only: [:index]
     resources :competitions

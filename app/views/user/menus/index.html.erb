@@ -3,6 +3,7 @@
         <div class="col-lg-3">
                 <div class="side-menu">
                     <%= render 'sorts/sort_select', menu: @menu %>  
+                    <%= render 'user/menus/genre_search', genres: @genres %>
                 </div> 
         </div>
         <div class="col-lg-7">
@@ -35,5 +36,15 @@
                          <%= paginate @menus %>
                 </table>
         </div>
+        <% if request.url.include?('genre_search') %>
+        <% else %>
+          <div class="row">
+            <div class="col-xs-6">
+            </div>
+            <div class="col-xs-6">
+                <%= paginate @menus %>
+            </div>
+          </div>
+        <% end %>
 </div>
 </div>

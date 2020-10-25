@@ -4,11 +4,12 @@ class User::MenusController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   #特定アクションの重複記述まとめる
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  before_action :set_genres, only: [:edit, :update, :new, :create, :destry]
+  before_action :set_genres, only: [:index, :edit, :update, :new, :create, :destry, :genre_search]
 
 
   def index
     @menus = Menu.where(is_valid: true).page(params[:page]).reverse_order
+    # @quantity = Memu.count
   end
 
   def new
@@ -47,6 +48,18 @@ class User::MenusController < ApplicationController
     else
       render 'show'
     end
+  end
+
+  def genre_search
+    @genre = Genre.find_by(name: params[:genre_name])
+    # ()の中にメニューのidに関する記述とgenre_idの記述をまとめる
+    @menus = Menu.where(is_valid: true, genre_id: @genre.id).page(params[:page]).reverse_order
+    @quantity = @menus.count
+    # where 各モデルをid以外の条件で検索する場合
+    # 該当するデータ全てが返ってくる。
+    @genres = Genre.all
+    # 部分テンプレート(list)呼び出しの時に必要
+    render :index
   end
 
   private
