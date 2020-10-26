@@ -2,7 +2,7 @@
 <div class="row no1">
         <div class="col-lg-3">
                 <div class="side-menu">
-                    <%= render 'sorts/sort_select', menu: @menu %>  
+                    <%= render 'sorts/menu_sort_select', menu: @menu %>  
                     <%= render 'user/menus/genre_search', genres: @genres %>
                 </div> 
         </div>
@@ -18,7 +18,9 @@
                         <% @menus.each do |menu| %>
                         <tr>
                                 <td>
-                                        <%= menu.user.name %>
+                                    <%= link_to user_path(menu.user), class: "btn-link" do %>
+                                        <strong><%= menu.user.name %></strong>
+                                    <% end %>
                                 </td>
                                 <td>
                                    <%= link_to menu_path(menu), class: "btn-link" do %>

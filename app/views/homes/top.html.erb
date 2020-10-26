@@ -5,9 +5,11 @@
          <div class="top-message">
             水泳競技者向けに作成した、<br>
             トレーニングメニューや大会の記録を一括管理できるサービスです。<br>
-            メニューの距離をグラフで確認し、計画的に練習予定を組むことができ、<br>
-            大会の記録はラップタイムがグラフで表示されるので<br>
-            自分の弱点が把握しやすくなっています<br>
+            メニューの距離をグラフで確認し、計画的に練習予定を組むことができます！<br>
+            大会の記録はラップタイムがグラフで表示されので、<br>
+            自分のレースの流れを具体的に把握できます。<br>
+            計画的にトレーニングを行い、レースの特徴を把握して<br>
+            弱点を克服し、ベストを更新していきましょう！<br>
             
             <p class="guest">ゲストユーザー機能がありますので、是非お試しください。<br />※メニュー内</p>
          </div>
@@ -16,7 +18,7 @@
          <div class="top-right-content">
             <div class="ranking">
                <div class="ranking-box">
-                  <h4 class–"ranking-title">ブックマークランキング</h4>
+                  <h4 class–"ranking-title">人気メニューランキング</h4>
                   <% @menu_rankings.each.with_index(1) do |menu, i| %>
                    <%= i %>  位   タイトル:
                     <%= link_to menu_path(menu), class: "top-menu-rank" do %>

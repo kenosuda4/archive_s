@@ -1,0 +1,7 @@
+<div class="sort-box">
+    <h4>並び替え</h4>
+    <%= form_with model: user, url: user_sorts_path, method: :get, local: true do |f| %>
+        <%= f.select :keyword, [['登録が新しい順', 'new'], ['登録が古い順', 'old'],['投稿が多い順','many'],['投稿が少ない順','few'],] %>
+        <%= f.submit '表示', class: "btn btn-primary" %>
+    <% end %>
+</div>

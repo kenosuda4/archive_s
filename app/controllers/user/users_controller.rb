@@ -6,6 +6,7 @@ class User::UsersController < ApplicationController
   
   def index
     @users = User.where(is_deleted: false).page(params[:page]).reverse_order
+    @genres = Genre.all
   end
 
   def show

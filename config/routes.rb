@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   # 検索
   get '/search' => 'searchs#search', as: 'search' 
   # ソート機能
-  get '/sorts' => 'sorts#sort', as: 'sort'
+  get '/menu_sorts' => 'sorts#menu_sort', as: 'menu_sorts'
+  get '/user_sorts' => 'sorts#user_sort', as: 'user_sorts'
+  get '/bookmark_sorts' => 'sorts#bookmark_sort', as: 'bookmerk_sorts'
 
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]

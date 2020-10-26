@@ -1,5 +1,5 @@
 <ul class="list-group">
-	  <h4>ジャンル検索</h4>
+	  <h4>ジャンル別メニュー検索</h4>
 	  <li class="list-group-item text-center">
 	  <% genres.each do |genre| %>
          	<h5>
@@ -7,6 +7,5 @@
          	<%= link_to genre.name, genre_search_menus_path(genre_name: "#{genre.name}"), method: :post %>
 		   </h5>
       <% end %>
-      <%= paginate @menus %>
 	</li>
 </ul>

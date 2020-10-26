@@ -5,6 +5,7 @@ class User::BookmarksController < ApplicationController
     def index
         @menus = Menu.all
         @bookmarks = current_user.bookmarks_menus.includes(:user).page(params[:page]).reverse_order
+        @genres = Genre.all
     end
 
     def create

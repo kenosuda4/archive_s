@@ -30,5 +30,19 @@ class User < ApplicationRecord
     end
   end
 
-
+  def self.sort(selection)
+    case selection
+    when 'new'
+        return order(created_at: :DESC)
+    when 'old'
+        return order(created_at: :ASC)
+    when 'many'
+        return find(Menu.group(:user_id).order(Arel.sql('count(user_id) desc')).pluck(:user_id))
+    when 'few'
+      return find(Menu.group(:user_id).order(Arel.sql('count(user_id) asc')).pluck(:user_id))
+    end
+  end
 end
+
+
+

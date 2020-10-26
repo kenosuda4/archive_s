@@ -24,7 +24,6 @@ class Menu < ApplicationRecord
             return where(is_valid: true).order(created_at: :ASC)
         when 'bookmarks'
             return find(Bookmark.group(:menu_id).order(Arel.sql('count(menu_id) desc')).pluck(:menu_id))
-
         end
     end
 end
