@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row no1">
+      <div class="col-lg-3">
+        <div class="side-menu">
+          <%= render 'sorts/menu_sort_select', menu: @menu %>  
+          <%= render 'user/menus/genre_search', genres: @genres %>
+        </div> 
+      </div>
+      <div class="col-lg-7">
+        <h3>メニュー・一覧</h3>
+        <table class="table">
+          <tr>
+           <th>ユーザー</th>
+           <th>メニュータイトル</th>
+           <th>距離</th>
+           <th>競技</th>
+           <th>作成日時</th>
+          </tr>
+            <% @menus.each do |menu| %>
+              <tr>
+                <td>
+                  <%= link_to user_path(menu.user), class: "btn-link" do %>
+                      <strong><%= menu.user.name %></strong>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to menu_path(menu), class: "btn-link" do %>
+                   <strong><%= menu.name %></strong>
+                  <% end %>
+                </td>
+                <td>
+                  <%= menu.total_distance %>
+                </td>
+                <td>
+                  <%= menu.genre.name %> 
+                </td>
+                <td>
+                  <%= menu.created_at.strftime('%Y/%m/%d') %> 
+                </td>
+              </tr>
+            <% end %>
+            <%= paginate @menus %>
+        </table>
+      </div>
+    </div>
+</div>

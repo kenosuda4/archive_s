@@ -25,20 +25,20 @@
               </ul>
             </nav>
             <nav class="nav navbar-nav navbar-right">
-            <div class="input-group header-search">
-              <div class="search-form">
-                <%= form_tag(search_path, method: :get) do %>
-                 <%= text_field_tag 'search[content]' %>
-                  <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Menu" => "menu" }) %>
-                  <!-- もっと綺麗な書き方あるはず.. -->
-                  <div hidden>
-                    <%= select_tag 'search[how]', options_for_select({ "部分一致" => "partical"  }) %>
-                  </div>
-                  <%= submit_tag '検索', class: "btn btn-primary" %>
-                <% end %>
+              <div class="input-group header-search">
+                <div class="search-form">
+                  <%= form_tag(search_path, method: :get) do %>
+                   <%= text_field_tag 'search[content]' %>
+                    <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Menu" => "menu" }) %>
+                    <!-- もっと綺麗な書き方あるはず.. -->
+                    <div hidden>
+                      <%= select_tag 'search[how]', options_for_select({ "部分一致" => "partical"  }) %>
+                    </div>
+                    <%= submit_tag '検索', class: "btn btn-primary" %>
+                  <% end %>
+                </div>
               </div>
-            </div>
-          </nav>
+            </nav>
           </div>
           <div id="hm-icon">
             <a class="menu-trigger" href="#">

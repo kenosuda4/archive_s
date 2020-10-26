@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row no1">
+      <div class="col-lg-3">
+        <div class="side-menu">
+          <!-- <%= render 'sorts/bookmark_sort_select', bookmark: @bookmark %>  -->
+          <%= render 'user/menus/genre_search', genres: @genres %>
+        </div> 
+      </div>
+      <div class="col-lg-7">
+        <table class="table">
+          <h2>ブックマーク一覧</h2>
+          <thead>
+              <tr>
+                  <th>ユーザー</th>
+                  <th>メニュー</th>
+                  <th>メニュー作成日</th>
+              </tr>
+          </thead>
+          <% current_user.bookmarks_menus.each do |menu| %>
+              <tr>
+                  <td>
+                    <%=  link_to menu.user.name %>
+                  </td>
+                  <td>
+                    <%= link_to menu.name, menu_path(menu) %>
+                  </td>
+                  <td>
+                    <%= menu.created_at.strftime('%Y/%m/%d') %>
+                  </td>
+              </tr>
+          <% end %>
+          <%= paginate @menus %>
+        </table>
+      </div>
+    </div>
+</div>

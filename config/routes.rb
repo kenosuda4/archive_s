@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   # 検索
   get '/search' => 'searchs#search', as: 'search' 
   # ソート機能
-  get '/sorts' => 'sorts#sort', as: 'sort'
+  get '/menu_sorts' => 'sorts#menu_sort', as: 'menu_sorts'
+  get '/user_sorts' => 'sorts#user_sort', as: 'user_sorts'
+  get '/bookmark_sorts' => 'sorts#bookmark_sort', as: 'bookmerk_sorts'
 
   namespace :admin do
     resources :informations, only: [:index, :create, :show, :edit, :update, :destroy]
@@ -45,10 +47,14 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update] do
       delete :quit, on: :member
     end
-    # menu+bookmark
+    # menu+bookmark+genre_search
     resources :menus do
       post 'add' => 'bookmarks#create'
       delete '/add' => 'bookmarks#destroy'
+      # collection → member
+      collection do
+        post :genre_search
+      end
     end
     resources :bookmarks, only: [:index]
     resources :competitions
