@@ -8,7 +8,7 @@ class User::MenusController < ApplicationController
 
 
   def index
-    @menus = Menu.where(is_valid: true).page(params[:page]).reverse_order
+    @menus = Menu.where(is_valid: true).page(params[:page]).per(10).reverse_order
     # @quantity = Memu.count
   end
 
@@ -53,7 +53,7 @@ class User::MenusController < ApplicationController
   def genre_search
     @genre = Genre.find_by(name: params[:genre_name])
     # ()の中にメニューのidに関する記述とgenre_idの記述をまとめる
-    @menus = Menu.where(is_valid: true, genre_id: @genre.id).page(params[:page]).reverse_order
+    @menus = Menu.where(is_valid: true, genre_id: @genre.id)
     @quantity = @menus.count
     # where 各モデルをid以外の条件で検索する場合
     # 該当するデータ全てが返ってくる。

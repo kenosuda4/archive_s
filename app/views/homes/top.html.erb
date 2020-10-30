@@ -1,12 +1,14 @@
 <div class="container-fluid">
    <div class="row top-main">
-      <div class="col-sm-6">   
-         <h3 class="top-h3">Enjoy Swimming!</h3>
+      <div class="col-sm-6">
+         <div class="welcome">
+            <h3 class="top-h3">Enjoy Swimming!</h3>
+         </div>
          <div class="top-message">
             水泳競技者向けに作成した、<br>
             トレーニングメニューや大会の記録を一括管理できるサービスです。<br>
             メニューの距離をグラフで確認し、計画的に練習予定を組むことができます！<br>
-            大会の記録はラップタイムがグラフで表示されので、<br>
+            大会の記録はラップタイムがグラフで表示されるので、<br>
             自分のレースの流れを具体的に把握できます。<br>
             計画的にトレーニングを行い、レースの特徴を把握して<br>
             弱点を克服し、ベストを更新していきましょう！<br>
@@ -24,9 +26,11 @@
                     <%= link_to menu_path(menu), class: "top-menu-rank" do %>
                       <strong><%= menu.name %></strong><br>
                     <% end %>
+                    距離:
+                      <strong><%= menu.total_distance %>m</strong><br>
                     制作者:
                     <%= link_to user_path(menu.user), class: "top-menu-rank" do %>
-                      <strong><%= menu.user.name %><br></strong>
+                      <strong><%= menu.user.name %></strong><br>
                     <% end %>
                    <% end %>
                </div>
