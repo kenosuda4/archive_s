@@ -1,18 +1,18 @@
 <div class="container">
 <div class="row no1">
-        <div class="col-lg-3">
+        <div class="col-lg-3 col-xs-12">
                 <div class="side-menu">
                     <%= render 'sorts/menu_sort_select', menu: @menu %>  
-                    <%= render 'user/menus/genre_search', genres: @genres %>
+                    <%= render 'user/menus/genre_search', genres: @genres, menu: @menu %>
                 </div> 
         </div>
-        <div class="col-lg-7">
-                <h3>メニュー・一覧</h3>
+        <div class="col-lg-7 col-xs-12">
+                <h3>All menus</h3>
                 <table class="table">
                         <tr>
                                 <th>ユーザー</th>
                                 <th>メニュータイトル</th>
-                                <th>距離</th>
+                                <th>距離(m)</th>
                                 <th>競技</th>
                         </tr>
                         <% @menus.each do |menu| %>
@@ -35,7 +35,6 @@
                                 </td>
                         </tr>
                          <% end %>
-                         <%= paginate @menus %>
                 </table>
         </div>
         <% if request.url.include?('genre_search') %>
@@ -44,7 +43,7 @@
             <div class="col-xs-6">
             </div>
             <div class="col-xs-6">
-                <%= paginate @menus %>
+            <%= paginate @menus %>
             </div>
           </div>
         <% end %>
