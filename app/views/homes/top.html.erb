@@ -1,56 +1,58 @@
 <div class="container-fluid">
    <div class="row top-main">
-      <div class="col-sm-6">
-         <div class="welcome">
-            <h3 class="top-h3">Enjoy Swimming!</h3>
-         </div>
-         <div class="top-message">
-            水泳競技者向けに作成した、<br>
-            トレーニングメニューや大会の記録を一括管理できるサービスです。<br>
-            メニューの距離をグラフで確認し、計画的に練習予定を組むことができます！<br>
-            大会の記録はラップタイムがグラフで表示されるので、<br>
-            自分のレースの流れを具体的に把握できます。<br>
-            計画的にトレーニングを行い、レースの特徴を把握して<br>
-            弱点を克服し、ベストを更新していきましょう！<br>
-            
-            <p class="guest">ゲストユーザー機能がありますので、是非お試しください。<br />※メニュー内</p>
-         </div>
-      </div>
-      <div class="col-lg-5">
-         <div class="top-right-content">
-            <div class="ranking">
-               <div class="ranking-box">
-                  <h4 class–"ranking-title">人気メニューランキング</h4>
-                  <% @menu_rankings.each.with_index(1) do |menu, i| %>
-                   <%= i %>  位   タイトル:
-                    <%= link_to menu_path(menu), class: "top-menu-rank" do %>
-                      <strong><%= menu.name %></strong><br>
-                    <% end %>
-                    距離:
-                      <strong><%= menu.total_distance %>m</strong><br>
-                    制作者:
-                    <%= link_to user_path(menu.user), class: "top-menu-rank" do %>
-                      <strong><%= menu.user.name %></strong><br>
-                    <% end %>
-                   <% end %>
-               </div>
+      <div class="top-background">
+         <div class="col-sm-6">
+            <div class="welcome">
+               <h3 class="top-h3">Enjoy Swimming!</h3>
             </div>
-            <div class="info">
-               <% if admin_signed_in? %>
-                 <div class="count-box">
-                    <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
-                    <p>登録メニュー数<%= link_to @menus.count, admin_menus_path, :style=>"color:yellow;" %>件<p>
-                    <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
-                 </div>
-               <% else %>
-                  <div class="info-box">
-                    <h4>お知らせ</h4>
-                    <% @informations.each do |information| %>
-                          <%= information.title %><br>
-                          <p><%= information.info_content %></p>
+            <div class="top-message">
+               水泳競技者向けに作成した、<br>
+               トレーニングメニューや大会の記録を一括管理できるサービスです。<br>
+               メニューの距離をグラフで確認し、計画的に練習予定を組むことができます！<br>
+               大会の記録はラップタイムがグラフで表示されるので、<br>
+               自分のレースの流れを具体的に把握できます。<br>
+               計画的にトレーニングを行い、レースの特徴を把握して<br>
+               弱点を克服し、ベストを更新していきましょう！<br>
+               
+               <p class="guest">ゲストユーザー機能がありますので、是非お試しください。<br />※メニュー内</p>
+            </div>
+         </div>
+         <div class="col-lg-5">
+            <div class="top-right-content">
+               <div class="ranking">
+                  <div class="ranking-box">
+                     <h4 class–"ranking-title">人気メニューランキング</h4>
+                     <% @menu_rankings.each.with_index(1) do |menu, i| %>
+                      <%= i %>  位   タイトル:
+                       <%= link_to menu_path(menu), class: "top-menu-rank" do %>
+                         <strong><%= menu.name %></strong><br>
                        <% end %>
-                   </div>
-               <% end %>
+                       距離:
+                         <strong><%= menu.total_distance %>m</strong><br>
+                       制作者:
+                       <%= link_to user_path(menu.user), class: "top-menu-rank" do %>
+                         <strong><%= menu.user.name %></strong><br>
+                       <% end %>
+                      <% end %>
+                  </div>
+               </div>
+               <div class="info">
+                  <% if admin_signed_in? %>
+                    <div class="count-box">
+                       <p>登録ユーザー数<%= link_to @users.count, admin_users_path, :style=>"color:yellow;" %>人<p>
+                       <p>登録メニュー数<%= link_to @menus.count, admin_menus_path, :style=>"color:yellow;" %>件<p>
+                       <p>登録大会数<%= link_to @competitions.count, admin_competitions_path, :style=>"color:yellow;" %>件<p>
+                    </div>
+                  <% else %>
+                     <div class="info-box">
+                       <h4>お知らせ</h4>
+                       <% @informations.each do |information| %>
+                             <%= information.title %><br>
+                             <p><%= information.info_content %></p>
+                          <% end %>
+                      </div>
+                  <% end %>
+               </div>
             </div>
          </div>
       </div>
