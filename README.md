@@ -1,5 +1,6 @@
 # Archive.S
-<img width="1440" alt="スクリーンショット 2020-08-31 9 32 08" src="https://user-images.githubusercontent.com/62235152/91676283-4a1a5a80-eb7a-11ea-95b6-04168f17424e.png">
+<img width="1431" alt="スクリーンショット 2020-11-02 21 08 30" src="https://user-images.githubusercontent.com/62235152/97936939-865b7880-1dc0-11eb-999f-bebbdc3d114b.png">
+
 ご覧いただきありがとうございます。  
 こちらは転職活動のためにポートフォリオとして作成した、  
 webアプリケーションです。(2020/6/15作成開始~2020/7/12公開)  
