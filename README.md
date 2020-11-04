@@ -91,3 +91,7 @@ https://drive.google.com/file/d/10_1ICXX3u9fdxNxC0gXFmqCLzMIAKnxd/view?usp=shari
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1a2_gdlJOAmjeKsuBNldaIFc3XP90_73EUEjmzU69-6o/edit#gid=1255680757
+
+### インフラ構成図
+<img width="606" alt="スクリーンショット 2020-11-04 9 58 02" src="https://user-images.githubusercontent.com/62235152/98056847-3f36bb80-1e84-11eb-9c76-f25999160425.png">
+
