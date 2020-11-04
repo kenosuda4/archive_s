@@ -79,9 +79,9 @@ chartkickを使用し、投稿したトレーニングメニューからトー�
 <img width="1241" alt="スクリーンショット 2020-08-31 10 43 14" src="https://user-images.githubusercontent.com/62235152/91676301-59010d00-eb7a-11ea-8055-cf888b63c748.png">
 
 レスポンシブ対応  
-<img width="300" alt="スクリーンショット 2020-11-04 9 03 57" src="https://user-images.githubusercontent.com/62235152/98053768-b10b0700-1e7c-11eb-9a3a-c5fefaece914.png">
-<img width="300" alt="スクリーンショット 2020-11-04 9 20 43" src="https://user-images.githubusercontent.com/62235152/98054700-08aa7200-1e7f-11eb-962f-ae5226c4fe08.png">
-<img width="300" alt="スクリーンショット 2020-11-04 9 40 58" src="https://user-images.githubusercontent.com/62235152/98055893-dd755200-1e81-11eb-872c-73559f164a02.png">
+<img width="290" alt="スクリーンショット 2020-11-04 9 03 57" src="https://user-images.githubusercontent.com/62235152/98053768-b10b0700-1e7c-11eb-9a3a-c5fefaece914.png">
+<img width="290" alt="スクリーンショット 2020-11-04 9 20 43" src="https://user-images.githubusercontent.com/62235152/98054700-08aa7200-1e7f-11eb-962f-ae5226c4fe08.png">
+<img width="290" alt="スクリーンショット 2020-11-04 9 40 58" src="https://user-images.githubusercontent.com/62235152/98055893-dd755200-1e81-11eb-872c-73559f164a02.png">
 
 
 
